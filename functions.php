@@ -1,7 +1,5 @@
 <?php 
 
-/* Tema Dosyaları */
-
 if ( ! function_exists( 'dpx_yukle' ) ) {
 	
 	function dpx_yukle() {
@@ -19,28 +17,16 @@ if ( ! function_exists( 'dpx_yukle' ) ) {
 }
 add_action( 'after_setup_theme', 'dpx_yukle' );
 
-/* Tema Kurulumu */
-
 if ( ! function_exists( 'dpx_kurulum' )) {
 	
 	function dpx_kurulum() {
-		
-		// Başlık Özelliği
 		add_theme_support( 'title-tag' );
-		
-		// Otomatik Kaynak Bağlantıları
 		add_theme_support( 'automatic-feed-links' );
-        
-		// Öne Çıkarılan Görsel Özelliği
 		add_theme_support( 'post-thumbnails' );	
-		
-		// Menü Alanı
 		register_nav_menus( array (
 			'ustmenu'      => 'Üst Menü',
 		) );
-        
-        // Özetten <p> tagını kaldırma
-        remove_filter( 'the_excerpt', 'wpautop' );        
+        	remove_filter( 'the_excerpt', 'wpautop' );        
 		
 	}
 	
@@ -48,46 +34,22 @@ if ( ! function_exists( 'dpx_kurulum' )) {
 
 add_action( 'after_setup_theme', 'dpx_kurulum' );
 
-/* Sidebar Özelliği */
-
-if(function_exists( 'register_sidebar' )) {
-    
-    register_sidebar( array(
-        'name' => __( 'Sidebar', '4piksel' ),
-        'id' => 'ana-side',
-        'description' => __( 'Anasayfa sidebar alanına eklediğiniz bileşenler sadece anasayfa üst sağda görünür.', '4pxsoz' ),
-        'before_widget' => '<aside class="widget">', 
-        'after_widget' => '</aside>',
-        'before_title' => '<span class="widget-baslik">',
-        'after_title' => '</span><div class="alt">',)
-    );
-    
-}
-
-/* Gerekli Dosyaları İçe Aktarma */
-
 if ( !function_exists( 'dpx_gerekli' )) {
     
     function dpx_gerekli() {
-        
-        // CSS
         wp_enqueue_style( 'style', get_stylesheet_uri() );
 		wp_enqueue_style( 'normalize', get_template_directory_uri(). '/css/normalize.css' );         
 		wp_enqueue_style( 'fa', get_template_directory_uri(). '/font/font-awesome/css/font-awesome.min.css' );
-        
-        // JS
 		wp_enqueue_script( 'genel', get_template_directory_uri().'/js/genel.js', array( 'jquery'),'', true);  
     }
     
 }
 add_action( 'wp_enqueue_scripts', 'dpx_gerekli' );
 
-/* Admin Paneline FontAwesome */
 if(is_admin()) {
     wp_enqueue_style( 'fontawesome', get_template_directory_uri(). '/font/font-awesome/css/font-awesome.min.css' );   
 } 
 
-/* HTML5 Shim */
 function html5_shim () {
 	global $is_IE;
 	if ($is_IE)
@@ -99,8 +61,6 @@ function html5_shim () {
 }
 add_action('wp_head', 'html5_shim');
 
-/* Yazı özeti bitişi */
-
 if ( ! function_exists( 'dpx_yaziozet' ) ) {
 	function dpx_yaziozet( $more ) {
 		return '...';
@@ -108,11 +68,7 @@ if ( ! function_exists( 'dpx_yaziozet' ) ) {
 }
 add_filter( 'excerpt_more', 'dpx_yaziozet' );
 
-/* Yorumları Listeleme */
-
 add_filter('comment_reply_link', 'replace_reply_link_class');
-
-
 function replace_reply_link_class($class){
     $class = str_replace("class='comment-reply-link", "class='cevapla efekt3s", $class);
     return $class;
@@ -162,8 +118,6 @@ function dpx_comment( $comment, $args, $depth ) {
 
 endif;
 
-/* Ad soyad (Nick) */
-
 function adsoyad() {
     $ad = get_the_author_meta('first_name');
     $soyad = get_the_author_meta('last_name');
@@ -181,8 +135,6 @@ function adsoyad() {
         echo $kisaad;
     }    
 }
-
-/* Sayfalama */
 
 function sayfalama($pages = '', $range = 3)
     {
@@ -208,8 +160,6 @@ function sayfalama($pages = '', $range = 3)
                 }
         }
 
-/* Yazarlara Sosyal Ağ Özellikleri */
-
 add_filter( 'user_contactmethods', 'iletisim' );
 function iletisim( $fields ) {
     $fields['facebook'] = __( 'Facebook' );
@@ -220,7 +170,6 @@ function iletisim( $fields ) {
     return $fields; 
 }
 
-/* Gereksiz bileşenleri kaldırma */
 function gereksiz_bilesen_kaldir() {
     unregister_widget('WP_Widget_Pages');     
     unregister_widget('WP_Widget_Calendar');     
@@ -236,8 +185,6 @@ function gereksiz_bilesen_kaldir() {
 } 
 add_action('widgets_init', 'gereksiz_bilesen_kaldir', 11);
 
-/* Resim linklerine sınıf atayalım */
-
 add_filter( 'previous_image_link', 'resim_link' );
 add_filter( 'next_image_link',     'resim_link' );
 function resim_link( $link )
@@ -246,8 +193,6 @@ function resim_link( $link )
 
     return str_replace( '<a ', "<a class='$class'", $link );
 }
-
-/* Kategori Fonksiyonu */
 
 function katlink() {
     $kategoriler = get_the_category();
