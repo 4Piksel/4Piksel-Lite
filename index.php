@@ -5,7 +5,8 @@
         <div class="ortala">
         
         <div class="sayfa-ust">
-            <h1 class="sayfa-baslik">Blog</h1>     
+            <h1 class="sayfa-baslik"><?php bloginfo('name'); ?></h1>
+            <p class="sayfa-aciklama"><?php bloginfo('description'); ?></p>     
         </div>  
         
         <div class="sayfasabit">
