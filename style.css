@@ -1,0 +1,2326 @@
+/*
+	Theme Name: 4Piksel Lite
+	Theme URI: http://www.4piksel.net/blog
+	Author: 4Piksel
+	Author URI: http://www.4piksel.net
+	Description: 4Piksel Lite, 4Piksel'in Blog Temasından Oluşturulmuştur. SEO destekli bir temadır.
+	Version: 1.0
+	Text Domain: 4Piksel
+*/
+
+@import url(css/normalize.css);
+
+@font-face {
+    font-family: 'AN Demi';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Avenir Next LT Pro Demi'), url('font/AvenirNextLTPro-Demi.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'AN Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Avenir Next LT Pro Regular'), url('font/AvenirNextLTPro-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'AN Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Avenir Next LT Pro Bold'), url('font/AvenirNextLTPro-Bold.woff') format('woff');
+}
+
+body {
+    background: #ebebeb;
+    font-family: 'An Regular';
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.ortala {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+input,textarea {
+    box-sizing: border-box;
+    outline: none;
+}
+
+.white-popup {
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/********** BUTON ***********/
+
+.buton {
+    background: #e1e1e1;
+    color: #666;
+    display: inline-block;
+    padding: 10px;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);    
+}
+
+.buton:hover {
+    color: #fff;
+}
+
+.buton:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #4A90E2;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;    
+}
+
+.buton:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1); 
+}
+
+/********** ÜST ÇUBUK ***********/
+
+#ust-cubuk {
+    background: #f9f9f9;
+    padding: 10px 0;
+}
+
+/********** ÜST **********/
+
+#ust {
+    background: #fff;
+    overflow: hidden;
+    height: 60px;
+}
+
+#ust .logo {
+    float: left;
+    margin: 17px 0;
+}
+
+#ust .logo.bpx {
+    margin: 7px 0;
+}
+
+#ust .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: 'An Demi';
+}
+
+#ust .logo h1 a {
+    color: #666;
+}
+
+#ust ul.menu {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#ust ul.menu li {
+    display: inline-block;
+}
+
+#ust ul.menu li a {
+    float: left;
+    color: #666;
+    padding: 10px;
+}
+
+#ust ul.menu li a:hover {
+    background: #f2f2f2;
+}
+
+#ust ul.menu li.teklif.mobil {
+    display: none;
+}
+
+#ust .teklifbtn {
+    float: right;
+    background: #4990E2;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'AN Demi';
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s; 
+    padding: 10px;
+    margin: 10px 0 10px 10px;
+}
+
+#ust .teklifbtn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #357BCC;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;   
+    border-radius: 4px;
+}
+
+#ust .teklifbtn:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);    
+}
+
+/********** GÖRSEL ***********/
+
+#gorsel {
+    background: url(rsm/ust.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;  
+    text-align: center;
+    position: relative;
+    height: 600px;
+}
+
+#gorsel .sabitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);    
+}
+
+#gorsel h1, #gorsel h2 {
+    margin: 0;
+}
+
+#gorsel .baslik {
+    font-size: 30px;
+    color: #fff;
+}
+
+#gorsel .aciklama {
+    font-size: 15px;
+    color: #979EA0;
+    margin: 20px 5%;
+}
+
+#gorsel .buton {
+    width: 200px;
+    height: 45px;
+    background: #4A90E2;
+    box-shadow: 0 0 19px 0 rgba(0,0,0,0.20);
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    line-height: 45px;
+    padding: 0;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;    
+}
+
+#gorsel .buton:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2C69B0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;   
+    border-radius: 4px;
+}
+
+#gorsel .buton:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);    
+}
+
+/********** FİYAT TEKLİFİ **********/
+
+.acilir {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6);
+}
+
+.acilir-icerik {
+    background-color: #fefefe;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    overflow: hidden;
+}
+
+.kapat {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.kapat:hover,
+.kapat:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#fiyat .baslik {
+    font-size: 30px;
+    color: #666;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+#fiyat .aciklama {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#fiyat input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+}
+
+
+#fiyat .is select {
+    height: 40px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    width: 100%;
+    padding: 0 10px;
+    color: #a9a9a9;
+}
+
+#fiyat label {
+    line-height: 40px; 
+    cursor: pointer;
+    display: block;
+}
+
+#fiyat label input {
+    width: auto;
+    float: left;
+    margin-right: 10px;
+}
+
+#fiyat textarea {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+    resize: none;    
+}
+
+#fiyat .dosya {
+    padding: 8px 5px;
+}
+
+#fiyat p {
+    margin: 0;
+    color: #666;
+}
+
+#fiyat .gonderbtn {
+    border: 0;
+    padding: 10px;
+    margin-top: 10px;
+    background: #4990E2;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#fiyat .gonderbtn:hover {
+    background: #3472BA;
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+/********** KUTU ALAN **********/
+
+#kutualan {
+    background: #fff;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+#kutualan .kutu {
+    width: 33.333%;
+    float: left;
+    text-align: center;
+    padding: 0 11px;
+    box-sizing: border-box;
+}
+
+#kutualan .kutu img {
+    width: 80px;
+    height: 84px;
+}
+
+#kutualan .kutu h3 {
+    font-size: 18px;
+    font-family: 'AN Demi';
+    color: #222;
+    margin: 10px 0;
+}
+
+#kutualan .kutu p {
+    font-family: 'AN Regular';
+    color: #666;
+    line-height: 20px;
+}
+
+#kutualan .kutu a {
+    font-family: 'AN Demi';
+    color: #4A90E2;
+}
+
+/*********** SON WP TEMALAR **********/
+
+#sonwptemalar {
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+#sonwptemalar .kutu-baslik {
+    font-size: 24px;
+    font-family: 'AN Demi';
+    color: #222;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+#sonwptemalar .kutu {
+    float: left;
+    box-sizing: border-box;
+    width: 33.333%;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    height: 245px; 
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out; 
+}
+
+#sonwptemalar .kutu:hover {
+    box-shadow: 0 5px 9px 0 rgba(0,0,0,0.05);     
+}
+
+#sonwptemalar .kutu .resim {
+    height: 200px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    position: relative;
+}
+
+#sonwptemalar .kutu .resim img {
+    width: 100%;
+    height: 100%;
+}
+
+#sonwptemalar .kutu .resim .hover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);     
+}
+
+#sonwptemalar .kutu:hover .resim .hover {
+    display: block;
+}
+
+#sonwptemalar .kutu .resim .hover .buton {
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #666;
+    font-family: 'AN Demi';
+    font-size: 11px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#sonwptemalar .kutu .resim .hover .buton:before {
+    content: none;
+}
+
+#sonwptemalar .kutu .resim .hover .buton.demo {
+    background: #4A90E2;
+    color: #fff;
+}
+
+#sonwptemalar .kutu .bilgi {
+    background: #fff;
+    height: 45px;
+    padding: 0 10px;
+}
+
+#sonwptemalar .kutu .bilgi a {
+    font-family: 'AN Regular';
+    color: #222;
+}
+
+#sonwptemalar .kutu .bilgi p {
+    float: left;
+    padding: 15px 0;
+    margin: 0;
+}
+
+#sonwptemalar .kutu .bilgi .fiyat {
+    float: right;
+    background: #4A90E2;
+    color: #fff;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 10px 0;
+}
+
+/********** WORDPRESS HİZMETLERİMİZ **********/
+
+#wphizmetler {
+    background: #fff;
+    overflow: hidden;
+    padding: 30px 0;
+}
+
+#wphizmetler .kutu-baslik {
+    font-size: 24px;
+    font-family: 'AN Demi';
+    color: #222;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+#wphizmetler .kutu {
+    float: left;
+    box-sizing: border-box;
+    width: 33.333%;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    height: 245px;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;    
+}
+
+#wphizmetler .kutu .resim {
+    height: 200px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    position: relative;
+}
+
+#wphizmetler .kutu .resim img {
+    width: 100%;   
+    height: 100%;
+}
+
+#wphizmetler .kutu .resim .hover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);       
+}
+
+#wphizmetler .kutu:hover .resim .hover {
+    display: block;
+}
+
+#wphizmetler .kutu .resim .hover .buton {
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #666;
+    font-family: 'AN Demi';
+    font-size: 11px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#wphizmetler .kutu .resim .hover .buton:before {
+    content: none;
+}
+
+#wphizmetler .kutu .resim .hover .buton.demo {
+    background: #4A90E2;
+    color: #fff;
+}
+
+#wphizmetler .kutu .bilgi {
+    background: #f9f9f9;
+    height: 45px;
+    padding: 0 10px;
+}
+
+#wphizmetler .kutu .bilgi a {
+    font-family: 'AN Regular';
+    color: #222;
+}
+
+#wphizmetler .kutu .bilgi p {
+    float: left;
+    padding: 15px 0;
+    margin: 0;
+}
+
+#wphizmetler .kutu .bilgi .fiyat {
+    float: right;
+    background: #D0D0D0;
+    color: #666666;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 10px 0;
+    font-family: 'AN Demi';
+}
+
+/********** YAZI KUTU **********/
+
+#yazikutu {
+    background: #1BDAAF;
+    padding: 100px 0;
+    text-align: center;
+}
+
+#yazikutu h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 24px;
+    font-family: 'AN Demi';
+}
+
+#yazikutu .btn {
+    background: #fff;
+    border-radius: 25px;
+    width: 200px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: inline-block;
+    color: #858282;
+    font-family: 'AN Demi';
+    margin-top: 10px;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;      
+}
+
+#yazikutu .btn:hover {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
+}
+
+/********** SAYFA **********/
+
+#sayfa {
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+#sayfa .sayfa-ust {
+    margin-bottom: 50px;
+}
+
+#sayfa .sayfa-ust .sayfa-aciklama {
+    color: #999;
+}
+
+#sayfa .sayfa-baslik {
+    font-size: 32px;
+    font-family: 'AN Demi';
+    color: #2d2d2d;
+    text-align: center;
+}
+
+#sayfa .sayfa-aciklama {
+    font-size: 16px;
+    color: #757575;
+    font-family: 'AN Demi';
+    text-align: center;
+}
+
+#sayfa .kutular .kutu {
+    float: left;
+    box-sizing: border-box;
+    width: 33.333%;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    height: 245px;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;    
+}
+
+#sayfa .kutular .kutu .resim {
+    height: 200px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    position: relative;
+}
+
+#sayfa .kutular .kutu .resim img {
+    width: 100%;   
+}
+
+#sayfa .kutular .kutu .resim .hover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);       
+}
+
+#sayfa .kutular .kutu:hover .resim .hover {
+    display: block;
+}
+
+#sayfa .kutular .kutu .resim .hover .buton {
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #666;
+    font-family: 'AN Demi';
+    font-size: 11px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#sayfa .kutular .kutu .resim .hover .buton.demo {
+    background: #4A90E2;
+    color: #fff;
+}
+
+#sayfa .kutular .kutu .bilgi {
+    background: #f9f9f9;
+    height: 45px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+#sayfa .kutular .kutu .bilgi a {
+    font-family: 'AN Demi';
+    color: #222;
+}
+
+#sayfa .kutular .kutu .bilgi p {
+    padding: 15px 0;
+    margin: 0;
+}
+
+#sayfa .kutular .kutu .bilgi .fiyat {
+    float: right;
+    background: #D0D0D0;
+    color: #666666;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 10px 0;
+    font-family: 'AN Demi';
+}
+
+#sayfa .sayfa-sol {
+    width: 652px;
+    float: left;
+}
+
+#sayfa .sayfa-sol .resim-alan {
+    background: #fff;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+#sayfa .sayfa-sol .resim-alan .pop {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 999;
+    background: #50E3C2;
+    color: #fff;
+    padding: 10px;
+}
+
+#sayfa .sayfa-sol .resim-alan .pop:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 15px;
+    border-color: transparent transparent transparent #50e3c3;
+    right: -15px;
+    position: absolute;
+    top: 0;
+    line-height: 0px;
+    _border-color: #000000 #000000 #000000 #50e3c3;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');    
+}
+
+#sayfa .sayfa-sol .resim-alan .pop:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0 0 15px;
+    border-color: transparent transparent transparent #50e3c3;
+    right: -15px;
+    position: absolute;
+    bottom: 0;
+    line-height: 0px;
+    _border-color: #000000 #000000 #000000 #50e3c3;
+    _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');    
+}
+
+#sayfa .sayfa-sol .resim-alan .resim img {
+    width: 100%;
+    height: 400px;
+}
+
+#sayfa .sayfa-sol .resim-alan .swiper-slide img {
+    width: 100%;
+    height: 400px;
+}
+
+#sayfa .sayfa-sol .resim-alan .site {
+    background: #1BDAAF;
+    height: 35px;
+    color: #fff;
+    font-family: 'AN Bold';
+    line-height: 35px;
+    width: 100px;
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+
+#sayfa .sayfa-sol .detay-alan {
+    background: #fff;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+#sayfa .sayfa-sol .detay-alan .detay-baslik {
+    font-size: 18px;
+    color: #666;
+    font-family: 'AN Demi';
+    margin: 0 0 10px 0;
+}
+
+#sayfa .sayfa-sag {
+    width: 318px;
+    float: right;
+}
+
+#sayfa .sayfa-sag .widget {
+    background: #fff;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#sayfa .sayfa-sag .widget .widget-baslik {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#sayfa .sayfa-sag .widget .yazilim {
+    width: 95px;
+    height: 60px;
+    border-radius: 2px;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    float: left;
+    margin-right: 6px;
+}
+
+#sayfa .sayfa-sag .widget .yazilim:last-child {
+    margin-right: 0;
+}
+
+#sayfa .sayfa-sag .widget .yazilim .fa {
+    color: #fff;
+    font-size: 24px;
+    margin-top: 5px;
+}
+
+#sayfa .sayfa-sag .widget .yazilim span {
+    display: block;
+    margin-top: 5px;
+}
+
+#sayfa .sayfa-sag .widget .yazilim.wordpress {
+    background: #505356;
+}
+
+#sayfa .sayfa-sag .widget .yazilim.html {
+    background: #F6A623;
+}
+
+#sayfa .sayfa-sag .widget .yazilim.css {
+    background: #D0011B;
+}
+
+#sayfa .sayfa-sag .widget ul.reflist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li:last-child {
+    margin-bottom: 0;
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li .hover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li:hover a:before {
+    content: "";
+    background: rgba(0,0,0,.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 2px;    
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li a {
+    display: block;
+    color: #fff;
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li .hover p {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); 
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    padding: 0;
+    margin: 0;
+}
+
+#sayfa .sayfa-sag .widget ul.reflist li:hover .hover {
+    display: block;
+}
+
+#sayfa .sayfa-sag .satinalbuton {
+    margin-bottom: 10px;
+}
+
+#sayfa .sayfa-sag .satinalbuton a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #F7733C;
+    border-radius: 2px;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);    
+}
+
+#sayfa .sayfa-sag .satinalbuton a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #E46835;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;    
+}
+
+#sayfa .sayfa-sag .satinalbuton a:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+}
+
+#sayfa .sayfa-sag .satinalbuton a span {
+    float: right;
+    padding: 0 15px;
+    border-left: 1px solid #D75E2B;
+    font-family: 'AN Demi';
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;      
+}
+
+#sayfa .sayfa-sag .satinalbuton a span .fa {
+    margin-left: 5px;
+}
+
+#sayfa .sayfa-sag .satinalbuton a:hover span {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);    
+}
+
+#sayfa .sayfa-sag .widget.pd0 {
+    padding: 0;
+}
+
+#sayfa .sayfa-sag .widget.pd0 ul.bilgiler {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sayfa .sayfa-sag .widget.pd0 ul.bilgiler li {
+    padding: 10px 5px;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+    font-family: 'AN Demi';
+    color: #666;
+}
+
+#sayfa .sayfa-sag .widget.pd0 ul.bilgiler li .bilgi {
+    float: left;
+    width: 50%;
+}
+
+#sayfa .sayfa-sag .widget.pd0 ul.bilgiler li .bilgi:after {
+    content:":";
+    float: right;
+}
+
+#sayfa .sayfa-sag .widget.pd0 ul.bilgiler li span {
+    float: right;
+}
+
+#sayfa .sayfa-sag .widget.pd0 .widget-baslik {
+    font-family: 'AN Demi';
+    padding: 10px;
+    margin: 0;
+}
+
+#sayfa .sayfa-sag .widget ul.sss {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sayfa .sayfa-sag .widget ul.sss .soru {
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;    
+}
+
+#sayfa .sayfa-sag .widget ul.sss .soru:hover {
+    background: #f2f2f2;
+}
+
+#sayfa .sayfa-sag .widget ul.sss .soru .sss-baslik {
+    display: block;
+    padding: 10px;    
+    cursor: pointer;
+    position: relative;    
+}
+
+#sayfa .sayfa-sag .widget ul.sss .soru .sss-baslik:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #4990E2;
+    height: 100%;
+    width: 0;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#sayfa .sayfa-sag .widget ul.sss .soru .sss-baslik:hover:before {
+    width: 5px;
+}
+
+#sayfa .sayfa-sag .widget ul.sss .soru .sss-icerik {
+    display: none;
+    padding: 0 10px 10px 10px;
+}
+
+/********** HİZMETLER **********/
+
+#sayfa.hizmetler .kutular .kutu {
+    float: left;
+    box-sizing: border-box;
+    width: 33.333%;
+    padding-right: 5px;
+    margin-bottom: 10px;
+    height: 245px;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;    
+}
+
+#sayfa.hizmetler .kutular .kutu .resim {
+    height: 200px;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    position: relative;
+}
+
+#sayfa.hizmetler .kutular .kutu .resim img {
+    width: 100%;   
+}
+
+#sayfa.hizmetler .kutular .kutu .resim.hizmet img {
+    height: 100%;
+}
+
+#sayfa.hizmetler .kutular .kutu .resim .hover {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);       
+}
+
+#sayfa.hizmetler .kutular .kutu:hover .resim .hover {
+    display: block;
+}
+
+#sayfa.hizmetler .kutular .kutu .resim .hover .buton {
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: #666;
+    font-family: 'AN Demi';
+    font-size: 11px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#sayfa.hizmetler .kutular .kutu .resim .hover .buton.demo {
+    background: #4A90E2;
+    color: #fff;
+}
+
+#sayfa.hizmetler .kutular .kutu .bilgi {
+    background: #f9f9f9;
+    height: 45px;
+    padding: 0 10px;
+}
+
+#sayfa.hizmetler .kutular .kutu .bilgi a {
+    font-family: 'AN Regular';
+    color: #222;
+}
+
+#sayfa.hizmetler .kutular .kutu .bilgi p {
+    float: left;
+    padding: 15px 0;
+    margin: 0;
+}
+
+#sayfa.hizmetler .kutular .kutu .bilgi .fiyat {
+    float: right;
+    background: #D0D0D0;
+    color: #666666;
+    padding: 5px;
+    border-radius: 2px;
+    margin: 10px 0;
+    font-family: 'AN Demi';
+}
+
+/********** BLOG **********/
+
+#sayfa.blog .sayfa-sol .post {
+    background: #fff;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#sayfa.blog .sayfa-sol .post:last-child {
+    margin-bottom: 0;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-resim {
+    text-align: center;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-resim img {
+    max-width: 100%;
+    height: auto;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama h1 {
+    margin: 0;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama h1 a {
+    color: #666;
+    font-size: 18px;
+    font-family: 'AN Demi';
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .yazi-bilgiler {
+    margin: 5px 0;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .yazi-bilgiler span {
+    margin-right: 10px;
+    color: #666;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .yazi-bilgiler span .fa {
+    margin-right: 5px;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .yazi-bilgiler span a {
+    color: #666;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .yazi-ozet p {
+    line-height: 21px;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .buton {
+    float: right;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .buton:after {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    padding-left: 5px;
+}
+
+#sayfa.blog .sayfa-sag .arama {
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+#sayfa.blog .sayfa-sag .arama input {
+    background: 0;
+    border: 0;
+    width: 90%;
+    box-sizing: border-box;
+    height: 45px;
+    padding: 10px;
+    float: left;
+}
+
+#sayfa.blog .sayfa-sag .arama button {
+    width: 10%;
+    float: right;
+    height: 45px;
+    border: 0;
+    background: 0;
+    color: #666;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#sayfa.blog .sayfa-sag .widget ul.kat li {
+    padding: 0;
+}
+
+#sayfa.blog .sayfa-sag .widget ul.kat li:first-child {
+    border-top: 1px solid #eee;
+}
+
+#sayfa.blog .sayfa-sag .widget ul.kat li a {
+    color: #666;
+    overflow: hidden;
+    display: block;
+    padding: 10px;
+}
+
+#sayfa.blog .sayfa-sag .widget ul.kat li a .katisim {
+    padding: 10px;
+    float: left;
+}
+
+#sayfa.blog .sayfa-sag .widget ul.kat li a .sayi {
+    float: right;
+    background: #f9f9f9;
+    padding: 10px;
+    transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out; 
+    min-width: 20px;
+    text-align: center;    
+}
+
+#sayfa.blog .sayfa-sag .widget ul.kat li:hover a .sayi {
+    background: #4A90E2;
+    color: #fff;
+}
+
+.sayfasabit {
+    overflow: hidden;
+}
+
+#sayfa.blog .sayfa-ust .yazi-bilgiler {
+    margin: 5px 0;
+    text-align: center;
+}
+
+#sayfa.blog .sayfa-ust .yazi-bilgiler span {
+    margin-right: 10px;
+    color: #666;
+}
+
+#sayfa.blog .sayfa-ust .yazi-bilgiler span .fa {
+    margin-right: 5px;
+}
+
+#sayfa.blog .sayfa-ust .yazi-bilgiler span a {
+    color: #666;
+}
+
+#sayfa.blog .onsonyazi {
+    background: #fff;
+    overflow: hidden;
+}
+
+#sayfa.blog .onsonyazi .onceki {
+    color: #666;
+    font-family: 'AN Demi';
+    padding: 10px;
+    display: inline-block;
+    float: left;
+}
+
+#sayfa.blog .onsonyazi .onceki:before {
+    content: "\f104";
+    font-family: 'FontAwesome';
+    margin-right: 5px;
+}
+
+#sayfa.blog .onsonyazi .sonraki {
+    color: #666;
+    font-family: 'AN Demi';
+    padding: 10px;
+    display: inline-block;
+    float: right;
+}
+
+#sayfa.blog .onsonyazi .sonraki:after {
+    content: "\f105";
+    font-family: 'FontAwesome';
+    margin-left: 5px;
+}
+
+#sayfa.blog .yorumlar {
+    margin-top: 20px;
+}
+
+#sayfa.blog .yorumlar .yorumlar-baslik {
+    background: #fff;
+    padding: 10px;
+    color: #666;
+    font-family: 'AN Demi';
+    margin-bottom: 10px;
+}
+
+#sayfa.blog .yorumlar .yorum {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#sayfa.blog .yorumlar .yorum .yorum-sol {
+    float: left;
+    margin-right: 10px;
+}
+
+#sayfa.blog .yorumlar .yorum .yorum-sol img {
+    width: 100px;
+    height: 100px;
+}
+
+#sayfa.blog .yorumlar .yorum .yorum-sag .ust .ad {
+    font-family: 'AN Demi';
+    color: #666;
+}
+
+#sayfa.blog .yorumlar .yorum .yorum-sag .ust .tarih {
+    float: right;
+} 
+
+#sayfa.blog .yorumlar .yorum .yorum-sag .alt p {
+    margin: 5px 0;
+}
+
+#sayfa.blog .yorumlar .yorum .yorum-sag .alt .cevapla {
+    background: #4990E2;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    float: right;
+}
+
+#sayfa.blog .yorumform .yazi {
+    background: #fff;
+    outline: none;
+    padding: 10px;
+    font-family: 'AN Demi';
+    cursor: pointer;
+}
+
+#sayfa.blog .yorumform.acik .yazi {
+    display: none;
+}
+
+#sayfa.blog .yorumform .yazi-ic {
+    background: #fff;
+    outline: none;
+    padding: 10px;
+    font-family: 'AN Regular'; 
+    height: 100px;
+    width: 100%;
+    resize: none;
+    border: 1px solid #eee;
+}
+
+#sayfa.blog .yorumform input {
+    width: 49.5%;
+    float: left;
+    height: 40px;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+#sayfa.blog .yorumform input.sag {
+    float: right;
+}
+
+#sayfa.blog .yorumform .buton {
+    margin-top: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+/********** SAYFALAMA *********/
+
+ul.sayfalama {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+ul.sayfalama li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+ul.sayfalama li a {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 18px;
+    text-align: center;
+    color: #666;
+    background: #fff;
+}
+
+/********** ALT **********/
+
+#alt {
+    background: #303E4D;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+#alt .kolonlar {
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+#alt .kolonlar .kolon {
+    text-align: center;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+#alt .kolonlar .kolon .baslik {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'AN Demi';
+}
+
+#alt .kolonlar .kolon ul.menu {
+    margin: 10px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+#alt .kolonlar .kolon ul.menu li a {
+    color: #B8B8B8;
+    padding: 5px 0;
+    display: block;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#alt .kolonlar .kolon ul.menu li a:hover {
+    color: #fff;
+}
+
+#alt .telif {
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+#alt .telif a {
+    color: #fff;
+}
+
+#alt ul.sosyal {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#alt ul.sosyal li {
+    display: inline-block;
+}
+
+#alt ul.sosyal li a {
+    float: left;
+    margin-right: 5px;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    display: block;
+    text-shadow: 4px 0 4px rgba(0,0,0,0.50); 
+    opacity: .8;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#alt ul.sosyal li a:hover {
+    opacity: 1;
+}
+
+#alt ul.sosyal li .fb {
+    background: #3B5998;
+}
+
+#alt ul.sosyal li .tw {
+    background: #55ACEE;
+}
+
+#alt ul.sosyal li .gp {
+    background: #DD4B39;
+}
+
+#alt ul.sosyal li .yt {
+    background: #BB0000;
+}
+
+#alt ul.sosyal li .li {
+    background: #007BB5;
+}
+
+#alt ul.sosyal li .in {
+    background: #125688;
+}
+
+#alt ul.sosyal li .tm {
+    background: #32506D;
+}
+
+/********** İLETİŞİM **********/
+
+#iletisim-sayfa {
+    margin: 20px 0;
+}
+
+#iletisim-sayfa .ic {
+    background: #fff;
+    padding: 30px;
+    overflow: hidden;
+}
+
+#iletisim-sayfa .ic .iletisim-sol {
+    width: 450px;
+    float: left;
+    text-align: center;
+}
+
+#iletisim-sayfa .ic .iletisim-sol .baslik {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+#iletisim-sayfa .ic .iletisim-sol .aciklama {
+    font-weight: 500;
+    margin: 0 0 10px 0;
+    line-height: 30px;
+}
+
+#iletisim-sayfa .ic .iletisim-sol img {
+    max-width: 100%;
+}
+
+#iletisim-sayfa .ic .iletisim-sag {
+    width: 450px;
+    float: right;
+}
+
+#iletisim-sayfa .ic .iletisim-sag input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #eee;
+    background: #f7f7f7;
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+#iletisim-sayfa .ic .iletisim-sag textarea {
+    width: 100%;
+    height: 120px;
+    border: 1px solid #eee;
+    background: #f7f7f7;
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+#iletisim-sayfa .ic .iletisim-sag .gonder {
+    background: #4A90E2;
+    color: #fff;
+    font-weight: bold;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+}
+
+#iletisim-sayfa .ic .iletisim-sag .bilgi {
+    font-family: 'AN Demi';
+}
+
+#iletisim-sayfa .ic .iletisim-sag .form p {
+    margin: 0;
+}
+
+#iletisim-sayfa .ic .iletisim-sag .wpcf7-not-valid-tip {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#iletisim-sayfa .ic .iletisim-sag .wpcf7-validation-errors {
+    background: red;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    border: 0;
+    text-align: center;
+}
+
+#iletisim-sayfa .ic .iletisim-sag .mailad a {
+    color: #000;
+    font-family: 'AN Demi';
+}
+
+@media only screen and (max-width: 480px) {
+    .ortala {
+        width: 95%;
+    }
+    
+    #haftasatilan .tema,
+    #soneklenentemalar .tema{
+        width: 100% !important;
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .ortala {
+        width: 480px;
+    }
+}
+
+@media only screen and (max-width: 768px) {  
+    #ust {
+        height: auto;
+    }
+    
+    #ust .ortala {
+        position: relative;
+    }
+    
+    #ust .menuac {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        padding: 19px 30px 20px 10px;
+    }
+
+    #ust .menuac span {
+        cursor: pointer;
+        height: 3px;
+        width: 23px;
+        background: #666;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 500ms ease-in-out;    
+    }
+
+    #ust .menuac span:before {
+        cursor: pointer;
+        height: 3px;
+        width: 23px;
+        background: #666;
+        position: absolute;
+        display: block;
+        content: '';
+        top: -7px;
+        transition: all 500ms ease-in-out;    
+    } 
+
+    #ust .menuac span:after {
+        cursor: pointer;
+        height: 3px;
+        width: 23px;
+        background: #666;
+        position: absolute;
+        display: block;
+        content: '';
+        bottom: -7px;
+        transition: all 500ms ease-in-out;    
+    }
+
+    #ust .menuac.acik span {
+        background-color: transparent;
+    }
+
+    #ust .menuac.acik span:before {
+        top: 0px;
+        transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        bottom: 0;    
+    }
+
+    #ust .menuac.acik span:after {
+        top: 0;
+        transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);    
+    }    
+    
+    #ust ul.menu {
+        display: none;
+        clear: both;
+        float: none;
+        overflow: hidden;
+    }
+    
+    #ust ul.menu li {
+        display: block;
+        text-align: center;
+    }
+    
+    #ust ul.menu li a {
+        display: block;
+        float: none;
+    }
+    
+    #ust ul.menu li.teklif.efekt {
+        display: none;
+    }
+    
+    #gorsel {
+        background: #2a3644;
+        height: 400px;
+    }
+    
+    #gorsel .baslik {
+        font-size: 20px;
+    }
+    
+    #gorsel .aciklama {
+        font-size: 13px;
+    }
+    
+    #kutualan .kutu {
+        float: none;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    #kutualan .kutu:last-child {
+        margin-bottom: 0;
+    }
+    
+    #sonwptemalar .kutu {
+        width: 100%;
+        float: none;
+    }
+    
+    #sonwptemalar .kutu img {
+        width: 100%;
+    }
+    
+    #wphizmetler .kutu {
+        width: 100%;
+        float: none;
+    }
+    
+    #yazikutu {
+        padding: 50px 0;
+    }
+    
+    #yazikutu h2 {
+        font-size: 18px;
+    }
+    
+    #sayfa.hizmetler .kutular .kutu {
+        width: 100%;
+        margin-right: 0;
+    }
+    
+    #alt .kolonlar .kolon {
+        display: none;
+    }
+    
+    #alt .kolonlar .kolon.dort {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #sayfa .kutular .kutu {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+    
+    #sayfa .sayfa-sol {
+        width: 100%;
+        float: none;
+    }
+    
+    #sayfa .sayfa-sol .resim-alan img {
+        height: 250px;
+        width: 100%;
+    }
+    
+    #sayfa .sayfa-sag {
+        float: none;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    #sayfa .sayfa-sag .widget .yazilim {
+        width: 100%;
+        margin-bottom: 5px;
+        border-radius: 0;
+    }
+    
+    #sayfa .sayfa-sag .widget .yazilim:last-child {
+        margin-bottom: 0;
+    }
+    
+    #sayfa .sayfa-sag .widget ul.reflist li img {
+        width: 100%;
+    }  
+    
+    #haftasatilan .tema {
+        width: 220px;
+        height: 175px !important;
+        margin-right: 0px;
+        float: none;
+        margin-bottom: 10px;
+    }
+    
+    #haftasatilan .tema:last-child {
+        margin-right: 0;
+    }
+    
+    #haftasatilan .tema img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    #soneklenentemalar .tema {
+        width: 220px;
+        height: 175px !important;
+        margin-right: 0px;
+        float: none;
+        margin-bottom: 10px;
+    }
+    
+    #soneklenentemalar .tema img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    #marketbilgiler .kutu {
+        width: 100% !important;
+        margin-bottom: 10px;
+    }   
+    
+    #marketmenu {
+        display: none;
+    }
+    
+    #bilgi .arama input {
+        width: 80% !important;
+    }
+    
+    #bilgi .arama button {
+        width: 20% !important;
+    }
+    
+    #sayfa.tema .sayfa-sol .resim-alan {
+        height: 300px;
+    }
+    
+    #sayfa.tema .sayfa-sol .resim-alan .resim {
+        height: 300px !important;
+    }    
+    
+    #sayfa.tema .sayfa-sol .resim-alan .resim img {
+        height: 300px !important;
+    }
+    
+    #iletisim-sayfa .ic .iletisim-sol {
+        display: none;
+    }
+    
+    #iletisim-sayfa .ic .iletisim-sag {
+        width: 100%;
+    }    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 980px) {
+    .ortala {
+        width: 750px;
+    }
+    
+    #ust {
+        height: auto;
+    }
+    
+    #ust .ortala {
+        position: relative;
+    }
+    
+    #ust .menuac {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        padding: 19px 30px 20px 10px;
+    }
+
+    #ust .menuac span {
+        cursor: pointer;
+        height: 3px;
+        width: 23px;
+        background: #666;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 500ms ease-in-out;    
+    }
+
+    #ust .menuac span:before {
+        cursor: pointer;
+        height: 3px;
+        width: 23px;
+        background: #666;
+        position: absolute;
+        display: block;
+        content: '';
+        top: -7px;
+        transition: all 500ms ease-in-out;    
+    } 
+
+    #ust .menuac span:after {
+        cursor: pointer;
+        height: 3px;
+        width: 23px;
+        background: #666;
+        position: absolute;
+        display: block;
+        content: '';
+        bottom: -7px;
+        transition: all 500ms ease-in-out;    
+    }
+
+    #ust .menuac.acik span {
+        background-color: transparent;
+    }
+
+    #ust .menuac.acik span:before {
+        top: 0px;
+        transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        bottom: 0;    
+    }
+
+    #ust .menuac.acik span:after {
+        top: 0;
+        transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);    
+    }    
+    
+    #ust ul.menu {
+        display: none;
+        clear: both;
+        float: none;
+        overflow: hidden;
+    }
+    
+    #ust ul.menu li {
+        display: block;
+        text-align: center;
+    }
+    
+    #ust ul.menu li a {
+        display: block;
+        float: none;
+    }    
+    
+    #ust ul.menu li.teklif.efekt {
+        display: none;
+    }
+
+    #ust ul.menu li.teklif.mobil {
+        display: block;
+    }
+    
+    #sonwptemalar .kutu .bilgi {
+        position: relative;
+    }
+    
+    #sonwptemalar .kutu .bilgi p {
+        width: 85%;
+        padding: 7px 0;
+    }
+    
+    #sonwptemalar .kutu .bilgi .fiyat {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    
+    #wphizmetler .kutu {
+        height: 195px;
+    }
+    
+    #wphizmetler .kutu .resim {
+        height: 150px;
+    }
+    
+    #sayfa.hizmetler .kutular .kutu {
+        height: 200px;
+    }
+    
+    #sayfa.hizmetler .kutular .kutu .resim {
+        height: 150px;
+    } 
+    
+    #sayfa.hizmetler .kutular .kutu,
+    #sayfa .kutular .kutu {
+        height: 200px;
+    }
+    
+    #sayfa.hizmetler .kutular .kutu .resim,
+    #sayfa .kutular .kutu .resim {
+        height: 150px;
+    }
+    
+    #sayfa .sayfa-sol {
+        width: 470px;
+    }
+    
+    #sayfa .sayfa-sol .resim-alan img {
+        height: 300px;
+    }
+    
+    #sayfa .sayfa-sag {
+        width: 270px;
+    }
+    
+    #sayfa .sayfa-sag .widget .yazilim {
+        width: 100%;
+        border-radius: 0;
+        margin-bottom: 5px;
+    }
+    
+    #sayfa .sayfa-sag .widget .yazilim:last-child {
+        margin: 0;
+    }
+    
+    #sayfa .sayfa-sag .widget ul.reflist li img {
+        max-width: 100%;
+    }
+    
+    #haftasatilan .tema {
+        width: 108px
+    }
+    
+    #haftasatilan .tema:last-child {
+        margin-right: 0;
+    }
+    
+    #haftasatilan .tema img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    #soneklenentemalar .tema {
+        width: 108px;
+    }
+    
+    #soneklenentemalar .tema img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    #marketbilgiler .kutu {
+        width: 250px !important;
+    }
+    
+    #sayfa.tema .sayfa-sol .resim-alan {
+        height: 300px !important;
+    }
+    
+    #sayfa.tema .sayfa-sol .resim-alan .resim {
+        height: 300px !important;
+    }
+    
+    #sayfa.tema .sayfa-sol .resim-alan .resim img {
+        height: 300px !important;
+    }
+    
+    #iletisim-sayfa .ic .iletisim-sol {
+        width: 48%;
+    }
+    
+    #iletisim-sayfa .ic .iletisim-sag {
+        width: 50%;
+    }
+}
