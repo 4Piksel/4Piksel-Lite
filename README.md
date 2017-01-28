@@ -10,6 +10,14 @@ Temanın kullanım amacı kişisel siteler içindir, fakat kendi isteklerinize g
 
 Temayı sürekli güncel tutmaya çalışacağız. Sizde temanın geliştirilmesine katkıda bulunmak istiyorsanız lütfen öneride bulunun.
 
+1.1 Sürümü ile gelecekler
+
+- Reklam Alanları
+- Bileşen Desteği
+
+`1.1 sürümü ile tema büyük ölçüde kod değişikliğine uğrayacaktır. 
+Kendi temanızı düzenlediyseniz bu temaya güncelleme yapmayın, bütün değişiklikleriniz gider.`
+
 4Piksel Wordpress Ekibi
 
 http://www.4piksel.net
