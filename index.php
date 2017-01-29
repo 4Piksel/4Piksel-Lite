@@ -14,14 +14,14 @@
         <div class="sayfa-sol">
         
             <?php while ( have_posts() ) : the_post(); ?>
-            <!-- Yazı Başlangıç -->
-            <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+            <!-- Yazi -->
+            <article <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
                 <div class="yazi-resim" itemprop="image">
                     <a href="<?php the_permalink(); ?>">
                         <?php if ( has_post_thumbnail() ) {
                             the_post_thumbnail('large');
                         } else {
-                            echo '<img src="' . get_bloginfo( 'template_url' ) . '/rsm/resimyok-byk.png" />';
+                            echo '<img src="' . get_template_directory_uri() . '/rsm/resimyok-byk.png" />';
                         } ?>
                     </a>
                 </div>
@@ -31,29 +31,35 @@
                         <span><time datetime="<?php the_time('d.m.Y'); ?>" itemprop="datePublished"><i class="fa fa-calendar"></i><?php the_time('d.m.Y'); ?></time></span>
                         <span itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author"><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php adsoyad(); ?></a></span>
                         <span><i class="fa fa-folder"></i><?php katlink(); ?></span>
-                        <span><i class="fa fa-comments"></i><?php comments_number( 'Yorum Yok', '1 Yorum', '% Yorum' ); ?></span>
+                        <span><i class="fa fa-comments"></i><?php comments_number( __('No Comments','4Piksel'), __('1 Comment','4Piksel'), __('% Comment','4Piksel') ); ?></span>                  
                     </div>
                     <div class="yazi-ozet" itemprop="text">
                         <p><?php the_excerpt(); ?></p>
                     </div>
-                    <a href="<?php the_permalink(); ?>" class="buton">Devamını Oku</a>
+                    <a href="<?php the_permalink(); ?>" class="buton"><?php _e('Read More', '4Piksel'); ?></a>
                 </div>
             </article>
-            <!-- Yazı Bitiş -->
+            <!-- Yazi Bitisi -->
             <?php endwhile; ?>
             
             <!-- Sayfalama -->
-            <?php sayfalama(); ?>
-            <!-- Sayfalama Bitiş -->
+            <?php
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', '4Piksel' ),
+                    'next_text'          => __( 'Next page', '4Piksel' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', '4Piksel' ) . ' </span>',
+                ) );
+            ?>            
+            <!-- Sayfalama Bitis -->
             
         </div>
-        <!-- Sayfa Sol Bitiş -->
+        <!-- Sayfa Sol Bitisi -->
         
         <?php get_sidebar(); ?>
         </div>
          
         </div>
     </div>
-    <!-- Sayfa Bitiş -->
+    <!-- Sayfa Bitisi -->
 
 <?php get_footer(); ?>

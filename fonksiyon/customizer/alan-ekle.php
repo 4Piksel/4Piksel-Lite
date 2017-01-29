@@ -9,8 +9,8 @@ function dpx_alan( $wp_customize ){
 	$wp_customize->add_section(
 		'dpx_ustalan',
 		array(
-			'title'			=> __( 'Üst Ayarlar', '4Piksel' ),
-			'description'	=> __( 'Buradan üst alanı ayarlayabilirsiniz.', '4Piksel' ),
+			'title'			=> __( 'Header Settings', '4Piksel' ),
+			'description'	=> __( 'Here you can set the top area.', '4Piksel' ),
 			'panel'			=> 'dpx_genel'
 		)
 	);
@@ -18,8 +18,8 @@ function dpx_alan( $wp_customize ){
 	$wp_customize->add_section(
 		'dpx_altalan',
 		array(
-			'title'			=> __( 'Alt Ayarlar', '4Piksel' ),
-			'description'	=> __( 'Buradan alt alanı ayarlayabilirsiniz.', '4Piksel' ),
+			'title'			=> __( 'Footer Settings', '4Piksel' ),
+			'description'	=> __( 'Here you can set the footer.', '4Piksel' ),
 			'panel'			=> 'dpx_genel'
 		)
 	);
@@ -27,8 +27,17 @@ function dpx_alan( $wp_customize ){
 	$wp_customize->add_section(
 		'dpx_sosyal',
 		array(
-			'title'			=> __( 'Sosyal Ağlar', '4Piksel' ),
-			'description'	=> __( 'Buradan sosyal ağları ayarlayabilirsiniz.', '4Piksel' ),
+			'title'			=> __( 'Social Network Settings', '4Piksel' ),
+			'description'	=> __( 'Here you can set social networks.', '4Piksel' ),
+			'panel'			=> 'dpx_genel'
+		)
+	);
+    
+	$wp_customize->add_section(
+		'dpx_reklam',
+		array(
+			'title'			=> __( 'Ad Settings', '4Piksel' ),
+			'description'	=> __( 'You can configure your ads here.', '4Piksel' ),
 			'panel'			=> 'dpx_genel'
 		)
 	);
@@ -36,8 +45,8 @@ function dpx_alan( $wp_customize ){
 	$wp_customize->add_section(
 		'dpx_renkalan',
 		array(
-			'title'			=> __( 'Renk Ayarları', '4Piksel' ),
-			'description'	=> __( 'Buradan temanızın renk ayarlarını yapabilirsiniz.', '4Piksel' ),
+			'title'			=> __( 'Color Settings', '4Piksel' ),
+			'description'	=> __( 'Here you can adjust the color settings of your theme.', '4Piksel' ),
 			'panel'			=> 'dpx_renk'
 		)
 	);
@@ -45,8 +54,8 @@ function dpx_alan( $wp_customize ){
 	$wp_customize->add_section(
 		'dpx_css',
 		array(
-			'title'			=> __( 'CSS Ayarları', 'theme-slug' ),
-			'description'	=> __( 'Bu alandan kendi CSS\'lerinizi oluşturabilirsiniz.', 'theme-slug' ),
+			'title'			=> __( 'CSS Settings', '4Piksel' ),
+			'description'	=> __( 'You can write your own CSS code in this field.', '4Piksel' ),
 			'panel'			=> 'dpx_gelismis'
 		)
 	);

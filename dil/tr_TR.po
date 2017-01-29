@@ -1,0 +1,363 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-01-29 17:31-0800\n"
+"PO-Revision-Date: 2017-01-29 17:32-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _e;__;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: archive.php:43 index.php:39
+msgid "Read More"
+msgstr "Devamını Oku"
+
+#: archive.php:52 index.php:48 single.php:42
+msgid "Previous page"
+msgstr "Önceki sayfa"
+
+#: archive.php:53 index.php:49 single.php:41
+msgid "Next page"
+msgstr "Sonraki sayfa"
+
+#: archive.php:54 index.php:50
+msgid "Page"
+msgstr "Sayfa"
+
+#: comments.php:31
+msgid "Comments are closed."
+msgstr "Yorumlar kapalı."
+
+#: comments.php:45
+msgid "Leave a Reply"
+msgstr "Yorum Yap."
+
+#: comments.php:46
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "%s için bir yorum yapın"
+
+#: comments.php:47
+msgid "Cancel Reply"
+msgstr "Yanıtı İptal Et"
+
+#: comments.php:48
+msgid "Post Comment"
+msgstr "Yorumu Gönder"
+
+#: comments.php:51
+msgid "Message"
+msgstr "Mesaj"
+
+#: comments.php:56
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Yorum yapabilmek için <a href=\"%s\">giriş</a> yapmalısınız."
+
+#: comments.php:62
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"Giriş yapan <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Çıkış yapmak "
+"için tıklayın!\">Çıkış Yap!</a>"
+
+#: comments.php:74
+msgid "Full Name (Required)"
+msgstr "Tam Ad (Gerekli)"
+
+#: comments.php:77
+msgid "E-Mail (Required)"
+msgstr "E-Posta (Gerekli)"
+
+#: comments.php:81
+msgid "Website"
+msgstr "Website Adresi"
+
+#: fonksiyon/customizer/alan-ekle.php:12
+msgid "Header Settings"
+msgstr "Üst Alan Ayarları"
+
+#: fonksiyon/customizer/alan-ekle.php:13
+msgid "Here you can set the top area."
+msgstr "Burada üst alan ayarlarını yapabilirsiniz."
+
+#: fonksiyon/customizer/alan-ekle.php:21
+msgid "Footer Settings"
+msgstr "Alt Alan Ayarları"
+
+#: fonksiyon/customizer/alan-ekle.php:22
+msgid "Here you can set the footer."
+msgstr "Burada alt alan ayarlarını yapabilirsiniz."
+
+#: fonksiyon/customizer/alan-ekle.php:30
+msgid "Social Network Settings"
+msgstr "Sosyal Ağ Ayarları"
+
+#: fonksiyon/customizer/alan-ekle.php:31
+msgid "Here you can set social networks."
+msgstr "Burada sosyal ağ ayarlarını yapabilirsiniz."
+
+#: fonksiyon/customizer/alan-ekle.php:39
+msgid "Ad Settings"
+msgstr "Reklam Ayarları"
+
+#: fonksiyon/customizer/alan-ekle.php:40
+msgid "You can configure your ads here."
+msgstr "Buradan reklam ayarlarını yapabilirsiniz."
+
+#: fonksiyon/customizer/alan-ekle.php:48
+msgid "Color Settings"
+msgstr "Renk Ayarları"
+
+#: fonksiyon/customizer/alan-ekle.php:49 fonksiyon/customizer/panel-ekle.php:27
+msgid "Here you can adjust the color settings of your theme."
+msgstr "Burada temanızın renk ayarlarını yapabilirsiniz."
+
+#: fonksiyon/customizer/alan-ekle.php:57
+msgid "CSS Settings"
+msgstr "CSS Ayarları"
+
+#: fonksiyon/customizer/alan-ekle.php:58
+msgid "You can write your own CSS code in this field."
+msgstr "Buradan kendi CSS kodlarınızı yazabilirsiniz."
+
+#: fonksiyon/customizer/cekirdek.php:16
+msgid "Title Color"
+msgstr "Başlık Rengi"
+
+#: fonksiyon/customizer/cekirdek.php:17
+msgid "Here you can choose the font color."
+msgstr "Buradan yazı başlık rengini seçebilirsiniz."
+
+#: fonksiyon/customizer/cekirdek.php:29
+msgid "Site Logo"
+msgstr "Site Logosu"
+
+#: fonksiyon/customizer/cekirdek.php:30
+msgid "Here you can upload logo for your site."
+msgstr "Buradan site logonuzu yükleyebilirsiniz."
+
+#: fonksiyon/customizer/diger.php:54
+msgid "Blog Layout"
+msgstr "Blog Düzeni"
+
+#: fonksiyon/customizer/diger.php:55
+msgid "Select the layout for the blog."
+msgstr "Blogun düzenini seçin."
+
+#: fonksiyon/customizer/kontroller.php:15
+msgid "Show copyright text"
+msgstr "Telif hakkı yazısını göster"
+
+#: fonksiyon/customizer/kontroller.php:16
+msgid "Select here to show the copyright text on your site."
+msgstr "Buradan telif hakkı yazısını gösterebilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:26
+msgid "Copyright Text"
+msgstr "Telif hakkı yazısı"
+
+#: fonksiyon/customizer/kontroller.php:27
+msgid "You can write your copyright statement here."
+msgstr "Buraya telif hakkı yazısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:37 functions.php:177
+msgid "Facebook"
+msgstr "Facebook"
+
+#: fonksiyon/customizer/kontroller.php:38
+msgid "You can write your Facebook profile link here."
+msgstr "Buraya Facebook profil bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:48 functions.php:178
+msgid "Twitter"
+msgstr "Twitter"
+
+#: fonksiyon/customizer/kontroller.php:49
+msgid "You can write your Twitter profile link here."
+msgstr "Buraya Twitter profil bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:59
+msgid "Google+"
+msgstr "Google+"
+
+#: fonksiyon/customizer/kontroller.php:60
+msgid "You can write your Google+ profile link here."
+msgstr "Buraya Google+ profil bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:70
+msgid "Youtube"
+msgstr "Youtube"
+
+#: fonksiyon/customizer/kontroller.php:71
+msgid "You can enter the YouTube channel link here."
+msgstr "Buraya Youtube kanal bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:81
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#: fonksiyon/customizer/kontroller.php:82
+msgid "You can write your Linkedin profile link here."
+msgstr "Buraya Linkedin profil bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:92 functions.php:180
+msgid "Instagram"
+msgstr "Instagram"
+
+#: fonksiyon/customizer/kontroller.php:93
+msgid "You can write your Instagram profile link here."
+msgstr "Buraya Instagram profil bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:103
+msgid "Tumblr"
+msgstr "Tumblr"
+
+#: fonksiyon/customizer/kontroller.php:104
+msgid "You can write your Tumblr profile link here."
+msgstr "Buraya Tumblr profil bağlantısını yazabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:114
+msgid "Analytics"
+msgstr "Analytics"
+
+#: fonksiyon/customizer/kontroller.php:115
+msgid ""
+"You can enter your Google Analytics tracking ID here. Example: <code>UA-"
+"XXXXXXX-X</code>"
+msgstr ""
+"Google Analytics izleme kimliğinizi buraya girebilirsiniz. Örnek: <code> UA-"
+"XXXXXXX-X </ code>"
+
+#: fonksiyon/customizer/kontroller.php:125
+msgid "CSS"
+msgstr "CSS"
+
+#: fonksiyon/customizer/kontroller.php:126
+msgid "You can write CSS code here. Please do not enter jQuery code here."
+msgstr "Buradan CSS kodu yazabilirsiniz. Lütfen jQuery kodunu buraya girmeyin."
+
+#: fonksiyon/customizer/kontroller.php:136
+msgid "468x60 Ad under article"
+msgstr "468x60 Yazı Altı Reklam"
+
+#: fonksiyon/customizer/kontroller.php:137
+msgid "You can set your ad here."
+msgstr "Buradan reklamınızı ayarlayabilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:147
+msgid "468x60 or 300x250 In-text ad"
+msgstr "Yazı için 468x60 ya da 300x250 Reklam"
+
+#: fonksiyon/customizer/kontroller.php:148
+msgid "You can enter the ad code that will appear after the paragraph."
+msgstr ""
+"Paragraf sayısının ardından görünecek reklam kodunu buraya girebilirsiniz."
+
+#: fonksiyon/customizer/kontroller.php:158
+msgid "Number of paragraphs"
+msgstr "Paragraf sayısı"
+
+#: fonksiyon/customizer/kontroller.php:159
+msgid "Ads will appear after the specified number of paragraphs."
+msgstr "Reklamlar, belirtilen sayıda paragrafın ardından görünecektir."
+
+#: fonksiyon/customizer/panel-ekle.php:15
+msgid "4Piksel General Settings"
+msgstr "4Piksel Genel Ayarlar"
+
+#: fonksiyon/customizer/panel-ekle.php:16
+msgid "Here you can make general settings of your theme."
+msgstr "Buradan temanızın genel ayarlarını yapabilirsiniz."
+
+#: fonksiyon/customizer/panel-ekle.php:26
+msgid "4Piksel Color Settings"
+msgstr "4Piksel Renk Ayarları"
+
+#: fonksiyon/customizer/panel-ekle.php:37
+msgid "4Piksel Advanced Settings"
+msgstr "4Piksel Gelişmiş Ayarlar"
+
+#: fonksiyon/customizer/panel-ekle.php:38
+msgid "Here you can make advanced settings of your theme."
+msgstr "Buradan temanızın gelişmiş ayarlarını yapabilirsiniz."
+
+#: fonksiyon/tema-etiket.php:8
+msgid "Comment navigation"
+msgstr "Yorum menüsü"
+
+#: fonksiyon/tema-etiket.php:11
+msgid "Older Comments"
+msgstr "Eski Yorumlar"
+
+#: fonksiyon/tema-etiket.php:15
+msgid "Newer Comments"
+msgstr "Yeni Yorumlar"
+
+#: functions.php:31
+msgid "Header Menu"
+msgstr "Üst Menü"
+
+#: functions.php:44
+msgid "Sidebar"
+msgstr "Kenar Çubuğu"
+
+#: functions.php:46
+msgid ""
+"The components you add to the sidebar area appear only in the right hand "
+"area."
+msgstr "Kenar çubuğuna eklediğiniz bileşenler yalnızca sağ alanda görünür."
+
+#: functions.php:58
+msgid "Search..."
+msgstr "Arama Yap..."
+
+#: functions.php:123
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:123
+msgid "(Edit)"
+msgstr "(Düzenle)"
+
+#: functions.php:137
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: functions.php:142
+msgid "<p>(Your comment is waiting for administrator approval.)</p>"
+msgstr "<p>(Yorumunuz yönetici onayı beklemektedir.)</p>"
+
+#: functions.php:179
+msgid "Google Plus"
+msgstr ""
+
+#: index.php:34
+msgid "No Comments"
+msgstr "Yorum Yok"
+
+#: index.php:34
+msgid "1 Comment"
+msgstr "1 Yorum"
+
+#: index.php:34
+msgid "% Comment"
+msgstr "% Yorum"
+
+#: single.php:65
+msgid "Tags:"
+msgstr "Etiketler:"
+
+#~ msgid "The ad appears after the first paragraph."
+#~ msgstr ""
+#~ "Paragraftan sonra görünecek olan reklam kodunu buraya girebilirsiniz."

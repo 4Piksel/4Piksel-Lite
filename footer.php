@@ -5,7 +5,7 @@
                 
                 <div class="kolon dort">
                     <?php if(get_theme_mod('telif_hakki')): ?>
-                    <p class="telif"><?php if(get_theme_mod('telif_hakki_yazi')): echo get_theme_mod('telif_hakki_yazi'); else: ?>Tema Yapımcısı <a target="_blank" href="https://www.4piksel.net">4Piksel Web Tasarım</a><?php endif; ?></p>
+                    <p class="telif"><?php if(get_theme_mod('telif_hakki_yazi')): echo get_theme_mod('telif_hakki_yazi'); else: ?>Theme created by <a target="_blank" href="https://www.4piksel.net">4Piksel Web Tasarim</a><?php endif; ?></p>
                     <?php endif; ?>
                     
                     <ul class="sosyal">
@@ -37,10 +37,8 @@
             </div>
         </div>
     </footer>
-    <!-- Alt Alan Bitiş -->
-    
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="js/genel.js"></script>
+    <!-- Alt Alan Bitis -->
+
     <?php wp_footer(); ?>
     
 <script>

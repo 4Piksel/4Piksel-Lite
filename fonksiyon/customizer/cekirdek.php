@@ -1,6 +1,6 @@
 <?php
 
-function theme_slug_register_customizer_controls_advanced( $wp_customize ){
+function dpx_cekirdek( $wp_customize ){
 
 	if ( ! isset( $wp_customize ) ) {
 		return;
@@ -13,8 +13,8 @@ function theme_slug_register_customizer_controls_advanced( $wp_customize ){
 			array(
 				'settings'		=> 'baslik_renk',
 				'section'		=> 'dpx_renkalan',
-				'label'			=> __( 'Başlık Rengi', '4Piksel' ),
-				'description'	=> __( 'Buradan yazı başlık rengini seçebilirsiniz.', '4Piksel' )
+				'label'			=> __( 'Title Color', '4Piksel' ),
+				'description'	=> __( 'Here you can choose the font color.', '4Piksel' )
 			)
 		)
 	);
@@ -26,12 +26,12 @@ function theme_slug_register_customizer_controls_advanced( $wp_customize ){
 			array(
 				'settings'		=> 'site_logo',
 				'section'		=> 'dpx_ustalan',
-				'label'			=> __( 'Site Logosu', '4Piksel' ),
-				'description'	=> __( 'Buradan sitenize ait logoyu yükleyebilirsiniz.', '4Piksel' )
+				'label'			=> __( 'Site Logo', '4Piksel' ),
+				'description'	=> __( 'Here you can upload logo for your site.', '4Piksel' )
 			)
 		)
 	);
 
 }
 
-add_action( 'customize_register', 'theme_slug_register_customizer_controls_advanced' );
+add_action( 'customize_register', 'dpx_cekirdek' );

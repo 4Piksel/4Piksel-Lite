@@ -51,8 +51,8 @@ function theme_slug_register_customizer_control_custom_radio_image( $wp_customiz
 			array(
 				'settings'		=> 'blog_layout',
 				'section'		=> 'theme_slug_section_layouts',
-				'label'			=> __( 'Blog Layout', 'theme-slug' ),
-				'description'	=> __( 'Select the layout for the blog.', 'theme-slug' ),
+				'label'			=> __( 'Blog Layout', '4Piksel' ),
+				'description'	=> __( 'Select the layout for the blog.', '4Piksel' ),
 				'choices'		=> array(
 					'one-column' 		=> get_template_directory_uri() . '/images/layouts/1c.png',
 					'two-column-left' 	=> get_template_directory_uri() . '/images/layouts/2cl.png',

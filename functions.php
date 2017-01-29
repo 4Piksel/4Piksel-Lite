@@ -11,6 +11,7 @@ if ( ! function_exists( 'dpx_yukle' ) ) {
         load_template( get_template_directory().'/fonksiyon/customizer/kontroller.php' );
         load_template( get_template_directory().'/fonksiyon/customizer/cekirdek.php' );
         load_template( get_template_directory().'/fonksiyon/customizer/diger.php' );
+        load_template( get_template_directory().'/fonksiyon/tema-etiket.php' );
         
 	}
 	
@@ -22,17 +23,51 @@ if ( ! function_exists( 'dpx_kurulum' )) {
 	function dpx_kurulum() {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'post-thumbnails' );	
+		add_theme_support( 'post-thumbnails' );
+        add_theme_support( "custom-header", $args );
+        add_theme_support( "custom-background", $args );
+        add_editor_style();
 		register_nav_menus( array (
-			'ustmenu'      => 'Üst Menü',
+			'ustmenu'      => __('Header Menu', '4Piksel'),
 		) );
-        	remove_filter( 'the_excerpt', 'wpautop' );        
-		
+        remove_filter( 'the_excerpt', 'wpautop' ); 
+        if ( ! isset( $content_width ) ) $content_width = 1000;
 	}
 	
 }
 
 add_action( 'after_setup_theme', 'dpx_kurulum' );
+
+function dpx_bilesen() {
+    
+    register_sidebar( array(
+        'name' => __( 'Sidebar', '4Piksel' ),
+        'id' => 'sidebar',
+        'description' => __( 'The components you add to the sidebar area appear only in the right hand area.', '4Piksel' ),
+        'before_widget' => '<aside class="widget">', 
+        'after_widget' => '</aside>',
+        'before_title' => '<span class="widget-baslik">',
+        'after_title' => '</span><div class="alt">',)
+    );
+    
+}
+add_action( 'widgets_init', 'dpx_bilesen' );
+
+function dpx_arama( $form ) {
+	$form = '<form role="search" method="get" id="searchform" class="search" action="' . home_url( '/' ) . '" >
+			<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="'. esc_attr__( 'Search...', '4Piksel' ) .'" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+	</form>';
+
+return $form;
+}
+
+add_filter( 'get_search_form', 'dpx_arama' );
+
+function dpx_bilesen_kaldir() {  
+    unregister_widget('WP_Widget_Calendar');       
+} 
+add_action('widgets_init', 'dpx_bilesen_kaldir', 11);
 
 if ( !function_exists( 'dpx_gerekli' )) {
     
@@ -40,6 +75,7 @@ if ( !function_exists( 'dpx_gerekli' )) {
         wp_enqueue_style( 'style', get_stylesheet_uri() );
 		wp_enqueue_style( 'normalize', get_template_directory_uri(). '/css/normalize.css' );         
 		wp_enqueue_style( 'fa', get_template_directory_uri(). '/font/font-awesome/css/font-awesome.min.css' );
+		wp_enqueue_script( 'jsdosya', 'http://code.jquery.com/jquery-1.10.1.min.js', array( 'jquery'),'', true);  
 		wp_enqueue_script( 'genel', get_template_directory_uri().'/js/genel.js', array( 'jquery'),'', true);  
     }
     
@@ -68,9 +104,9 @@ if ( ! function_exists( 'dpx_yaziozet' ) ) {
 }
 add_filter( 'excerpt_more', 'dpx_yaziozet' );
 
-add_filter('comment_reply_link', 'replace_reply_link_class');
-function replace_reply_link_class($class){
-    $class = str_replace("class='comment-reply-link", "class='cevapla efekt3s", $class);
+add_filter('comment_reply_link', 'cevap_link_sinif');
+function cevap_link_sinif($class){
+    $class = str_replace("class='comment-reply-link", "class='cevapla", $class);
     return $class;
 }
 
@@ -84,7 +120,7 @@ function dpx_comment( $comment, $args, $depth ) {
        
     
     <li class="post pingback">
-        <p><?php _e( 'Pingback:', 'shape' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Düzenle)', '4Piksel' ), ' ' ); ?></p>
+        <p><?php _e( 'Pingback:', '4Piksel' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', '4Piksel' ), ' ' ); ?></p>
     <?php
             break;
         default :
@@ -103,13 +139,13 @@ function dpx_comment( $comment, $args, $depth ) {
             </div>
             <div class="alt">
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                    <?php _e( '<p>(Yorumunuz yönetici onayı beklemektedir.)</p>', '4Piksel' ); ?>
+                    <?php _e( '<p>(Your comment is waiting for administrator approval.)</p>', '4Piksel' ); ?>
                 <?php endif; ?>
                 <?php comment_text(); ?>
                 <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
             </div>
         </div>
-    </div><!-- Yorum Bitiş -->     
+    </div><!-- Yorum Bitis -->     
 
     <?php
             break;
@@ -136,62 +172,14 @@ function adsoyad() {
     }    
 }
 
-function sayfalama($pages = '', $range = 3)
-    {
-        $showitems = ($range * 2)+1;
-            global $paged;
-                if(empty($paged)) $paged = 1;
-                if($pages == '') {
-                        global $wp_query;
-                        $pages = $wp_query->max_num_pages;
-                        if(!$pages) {
-                            $pages = 1;
-                        } }
-                if(1 != $pages) {
-                    echo "<ul class='sayfalama'>";
-                        if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<li><a class='buton' href='".get_pagenum_link(1)."'>&laquo;</a></li>";
-                        for ($i=1; $i <= $pages; $i++) {
-                    if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
-                        echo ($paged == $i)? "<li class='aktif'><a class='buton' href='javascript:void(0)'>".$i."</a></li>":"<li><a class='buton' href='".get_pagenum_link($i)."' class='pasif' >".$i."</a></li>";
-                    }}
-
-                    if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<li><a class='buton' href='".get_pagenum_link($pages)."'>&raquo;</a></li>";
-                    echo "</ul>";
-                }
-        }
-
 add_filter( 'user_contactmethods', 'iletisim' );
 function iletisim( $fields ) {
-    $fields['facebook'] = __( 'Facebook' );
-    $fields['twitter'] = __( 'Twitter' );
-    $fields['gplus'] = __( 'Google Plus' );
-    $fields['instagram'] = __( 'Instagram' );
+    $fields['facebook'] = __( 'Facebook', '4Piksel' );
+    $fields['twitter'] = __( 'Twitter', '4Piksel' );
+    $fields['gplus'] = __( 'Google Plus', '4Piksel' );
+    $fields['instagram'] = __( 'Instagram', '4Piksel' );
     
     return $fields; 
-}
-
-function gereksiz_bilesen_kaldir() {
-    unregister_widget('WP_Widget_Pages');     
-    unregister_widget('WP_Widget_Calendar');     
-    unregister_widget('WP_Widget_Archives');     
-    unregister_widget('WP_Widget_Links');     
-    unregister_widget('WP_Widget_Meta');       
-    unregister_widget('WP_Widget_Categories');     
-    unregister_widget('WP_Widget_Recent_Posts');     
-    unregister_widget('WP_Widget_Recent_Comments');     
-    unregister_widget('WP_Widget_RSS');     
-    unregister_widget('WP_Widget_Tag_Cloud');     
-    unregister_widget('WP_Nav_Menu_Widget');     
-} 
-add_action('widgets_init', 'gereksiz_bilesen_kaldir', 11);
-
-add_filter( 'previous_image_link', 'resim_link' );
-add_filter( 'next_image_link',     'resim_link' );
-function resim_link( $link )
-{
-    $class = 'next_image_link' === current_filter() ? 'ileri efekt3s' : 'geri efekt3s';
-
-    return str_replace( '<a ', "<a class='$class'", $link );
 }
 
 function katlink() {
@@ -199,6 +187,68 @@ function katlink() {
     if ( ! empty( $kategoriler ) ) {
         echo '<a href="' . esc_url( get_category_link( $kategoriler[0]->term_id ) ) . '">' . esc_html( $kategoriler[0]->name ) . '</a>';
     }       
-} 
+}
+
+function AramaFiltresi($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+
+add_filter('pre_get_posts','AramaFiltresi');
+
+add_theme_support('infinite-transporter', 
+    array( 
+        'container' => 'sayfa-sol', 
+        'posts_per_page'  => 5 
+    ) 
+);
+
+add_action( 'after_setup_theme', 'tema_dil' );
+function tema_dil(){
+    load_theme_textdomain( '4Piksel', get_template_directory() . '/dil' );
+}
+
+define('WPLANG', 'tr-TR');
+
+function cevap_js() {
+
+    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
+        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
+    }
+}
+add_action(  'wp_enqueue_scripts', 'cevap_js' );
+
+
+
+function reklami_ekle( $content ) {
+	
+	$ad_code = '<div class="yazireklam">' .get_theme_mod('yazi-ic-reklam'). '</div>';
+
+	if ( is_single() && ! is_admin() ) {
+		return reklam_paragraf( $ad_code, get_theme_mod('reklam_paragraf'), $content );
+	}
+	
+	return $content;
+}
+add_filter( 'the_content', 'reklami_ekle' );
+ 
+function reklam_paragraf( $insertion, $paragraph_id, $content ) {
+	$closing_p = '</p>';
+	$paragraphs = explode( $closing_p, $content );
+	foreach ($paragraphs as $index => $paragraph) {
+
+		if ( trim( $paragraph ) ) {
+			$paragraphs[$index] .= $closing_p;
+		}
+
+		if ( $paragraph_id == $index + 1 ) {
+			$paragraphs[$index] .= $insertion;
+		}
+	}
+	
+	return implode( '', $paragraphs );
+}
 
 ?>

@@ -1,82 +1,88 @@
 <?php
-    if ( post_password_required() )
-        return;
+
+if ( post_password_required() ) {
+	return;
+}
 ?>
-        
-        <div class="yorumlar">  
-        
-            <div class="yorumlar-baslik"><?php comments_number( 'Yorum Yok', '1 Yorum', '% Yorum' ); ?></div>                
-        
-        <?php
-			wp_list_comments( array( 'callback' => 'dpx_comment' ) );
-		?>
-        </div>        
 
-        <div class="yorumform">
- 
-        <?php if ( have_comments() ) : ?>
- 
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-        <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation">
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Eski Yorumlar', '4Piksel' ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Yeni Yorumlar &rarr;', '4Piksel' ) ); ?></div>
-        </nav>
-        <?php endif;  ?>
+<div class="yorumlar">
 
- 
-    <?php endif;  ?>
- 
-    <?php
-        if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-    ?>
-        <p class="nocomments"><?php _e( 'Yorumlara Kapalı.', '4Piksel' ); ?></p>
-    <?php endif; ?>
- 
-    <?php if ( comments_open() ) : ?>
+	<?php if ( have_comments() ) : ?>
+		<div class="yorumlar-baslik">
+			<?php
+				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', '4Piksel' ),
+					number_format_i18n( get_comments_number() ), get_the_title() );
+			?>
+		</div>
 
-<div id="respond">
+		<?php dpx_yorum_nav(); ?>
 
-    <h5 class="title"><?php cancel_comment_reply_link(); ?></h5>
+			<?php
+				wp_list_comments( 'type=comment&callback=dpx_comment' );
+			?>
 
-    <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
+		<?php dpx_yorum_nav(); ?>
 
-    <p><?php _e( 'Yorum yapabilmek için', '4Piksel' ); ?> <a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php _e( 'giriş yapın.', '4Piksel' ); ?></a></p>
+	<?php endif; ?>
 
-    <?php else : ?> 
-         
-    <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">      
-    
-    <div class="form">
-    <textarea class="yazi-ic" name="comment" id="comment" cols="10" rows="5" placeholder="<?php _e( 'MESAJINIZ', '4Piksel' ); ?>" tabindex="4"></textarea>
-
-    <?php comment_id_fields(); ?>    
-   
-    <?php if ( is_user_logged_in() ) : else : ?>
-            <input type="text" name="author" id="author" value="" placeholder="<?php _e( 'AD SOYAD', '4Piksel' ); ?>" size="22" tabindex="1"/>
-
-            <input class="sag" type="text" name="email" id="email" value="" placeholder="<?php _e( 'E-POSTA', '4Piksel' ); ?>" size="22" tabindex="2" />       
-
-    <?php endif; ?>
-    
-    <button class="buton" name="submit" type="submit" id="submit" tabindex="5"><?php _e("GÖNDER","4piksel"); ?></button>
-    </div>        
-   
-        
-    <?php do_action('comment_form', $post->ID); ?>
-
-    </form>
-    <?php endif; ?>
+	<?php
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', '4Piksel' ); ?></p>
+	<?php endif; ?>
 
 </div>
-            
-                
-<?php endif; ?> 
 
-        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-        <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation">
-            <div class="nav-previous"><?php previous_comments_link( __( '&larr; Eski Yorumlar', '4Piksel' ) ); ?></div>
-            <div class="nav-next"><?php next_comments_link( __( 'Yeni Yorumlar &rarr;', '4Piksel' ) ); ?></div>
-        </nav>
-        <?php endif; ?>	 
+
+<?php
+    
+    $args = array(
+        'id_form'           => 'commentform',
+        'class_form'      => 'yorumform',
+        'id_submit'         => 'submit',
+        'class_submit'      => 'buton',
+        'name_submit'       => 'submit',
+        'title_reply'       => __( 'Leave a Reply', '4Piksel' ),
+        'title_reply_to'    => __( 'Leave a Reply to %s', '4Piksel' ),
+        'cancel_reply_link' => __( 'Cancel Reply', '4Piksel' ),
+        'label_submit'      => __( 'Post Comment', '4Piksel' ),
+        'format'            => 'xhtml',
+
+        'comment_field' =>  '<textarea class="yazi-ic" id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="'.sprintf(__('Message', '4Piksel')).'">' .
+        '</textarea>',
+
+        'must_log_in' => '<p class="bilgi">' .
+        sprintf(
+          __( 'You must be <a href="%s">logged in</a> to post a comment.', '4Piksel' ),
+          wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+        ) . '</p>',
+
+        'logged_in_as' => '<p class="bilgi">' .
+        sprintf(
+        __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', '4Piksel' ),
+          admin_url( 'profile.php' ),
+          $user_identity,
+          wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+        ) . '</p>',      
+
+        'comment_notes_before' => '',
         
-         </div> 
+        'comment_notes_after' => '',          
+
+        'fields' => apply_filters(
+            'comment_form_default_fields', array(
+                'author' =>'<input id="author" placeholder="'.sprintf(__('Full Name (Required)', '4Piksel')).'" name="author" type="text" value="' .
+                    esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />'
+                    ,
+                'email'  => '<input id="email" placeholder="'.sprintf(__("E-Mail (Required)", "4Piksel")).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                    '" size="30"' . $aria_req . ' />'  .
+                    ( $req ? '' : '' ) 
+                     ,
+                'url'    => '<input id="url" name="url" placeholder="'.sprintf(__("Website", "4Piksel")).'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />'
+            )
+        ),          
+        
+    );
+        comment_form( $args );    
+    
+    ?>

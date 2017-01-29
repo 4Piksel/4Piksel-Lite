@@ -18,25 +18,58 @@
         <!-- Sayfa Sol -->
         <div class="sayfa-sol">
             
-            <!-- Yazı Başlangıç -->
+            <!-- Yazi -->
             <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
                 <div class="yazi-resim" itemprop="image">
                     <?php if ( has_post_thumbnail() ) {
                         the_post_thumbnail('large');
                     } else {
-                        echo '<img src="' . get_bloginfo( 'template_url' ) . '/rsm/resimyok.png" />';
+                        echo '<img src="' . get_template_directory_uri() . '/rsm/resimyok.png" />';
                     } ?>
                 </div>
                 <div class="yazi-aciklama">
                     <div class="yazi-ozet" itemprop="text">
-                        <?php the_content(); ?>
+                        <?php the_content(); 
+                        
+                        $varsayilan = array(
+                                'before'           => '<div class="sayfalama">',
+                                'after'            => '</div>',
+                                'link_before'      => '<span>',
+                                'link_after'       => '</span>',
+                                'next_or_number'   => 'number',
+                                'separator'        => ' ',
+                                'nextpagelink'     => __( 'Next page', '4Piksel' ),
+                                'previouspagelink' => __( 'Previous page', '4Piksel' ),
+                                'pagelink'         => '%',
+                                'echo'             => 1
+                            );
+
+                                wp_link_pages( $varsayilan );
+
+                        ?>                         
                     </div>
                 </div>
             </article>
-            <!-- Yazı Bitiş -->
+            <!-- Yazi Bitisi -->
             <?php endif; ?>
             
-            <!-- Önceki & Sonraki Yazı -->
+            <?php if(get_theme_mod('yazi-reklam')): ?>
+            <div class="yazi-reklam">
+                <?php echo get_theme_mod('yazi-reklam'); ?>
+            </div>
+            <?php endif; ?>
+            
+            <?php if(has_tag()): ?>
+            <!-- Etiketler -->
+            <div class="etiketler">
+                <span><?php _e("Tags:","4Piksel"); ?></span>
+
+                <?php the_tags( '', ' ', '' ); ?> 
+            </div>
+            <!-- Etiketler Bitis -->
+            <?php endif; ?>            
+            
+            <!-- Onceki & Sonraki Yazi -->
             <div class="onsonyazi">
                 <?php
                 $onceki_yazi = get_previous_post();
@@ -50,20 +83,20 @@
                     <a class="sonraki" href="<?php echo get_permalink( $sonraki_yazi->ID ); ?>"><?php echo $sonraki_yazi->post_title; ?></a>
                 <?php endif; ?>                                              
             </div>
-            <!-- Önceki & Sonraki Yazı Bitiş -->
+            <!-- Onceki & Sonraki Yazi Bitis -->
             
             <!-- Yorum Alan -->
             <?php comments_template(); ?>
-            <!-- Yorum Alanı Bitiş -->
+            <!-- Yorum Alani Bitisi -->
             
         </div>
-        <!-- Sayfa Sol Bitiş -->
+        <!-- Sayfa Sol Bitis -->
         
         <?php get_sidebar(); ?>
         </div>
          
         </div>
     </div>
-    <!-- Sayfa Bitiş -->
+    <!-- Sayfa Bitis -->
 
 <?php get_footer(); ?>

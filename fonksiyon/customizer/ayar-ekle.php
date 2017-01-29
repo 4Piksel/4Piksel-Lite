@@ -134,8 +134,39 @@ function dpx_ayar( $wp_customize ){
 			'default'			=> '',
 			'type'				=> 'theme_mod',
 			'capability'		=> 'edit_theme_options',
+            'sanitize_callback' => 'theme_slug_sanitize_nohtml'
 		)
-	);    
+	); 
+    
+	$wp_customize->add_setting(
+		'yazi-reklam',
+		array(
+			'default'			=> '',
+			'type'				=> 'theme_mod',
+			'capability'		=> 'edit_theme_options',
+            'sanitize_callback' => 'theme_slug_sanitize_html'
+		)
+	);
+    
+	$wp_customize->add_setting(
+		'yazi-ic-reklam',
+		array(
+			'default'			=> '',
+			'type'				=> 'theme_mod',
+			'capability'		=> 'edit_theme_options',
+            'sanitize_callback' => 'theme_slug_sanitize_html'
+		)
+	); 
+    
+	$wp_customize->add_setting(
+		'reklam_paragraf',
+		array(
+			'default'			=> 2,
+			'type'				=> 'theme_mod',
+			'capability'		=> 'edit_theme_options',
+			'sanitize_callback'	=> 'theme_slug_sanitize_number_absint'
+		)
+	);
 }
 
 add_action( 'customize_register', 'dpx_ayar' );

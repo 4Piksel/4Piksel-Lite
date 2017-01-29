@@ -11,7 +11,7 @@
         <!-- Sayfa Sol -->
         <div class="sayfa-sol">
             <?php while ( have_posts() ) : the_post(); ?>
-            <!-- Yazı Başlangıç -->
+            <!-- Yazi Baslangic -->
             <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
                 <div class="yazi-aciklama">
                     <div class="yazi-ozet" itemprop="text">
@@ -19,16 +19,16 @@
                     </div>
                 </div>
             </article>
-            <!-- Yazı Bitiş -->
+            <!-- Yazi Bitis -->
             <?php endwhile; ?>
         </div>
-        <!-- Sayfa Sol Bitiş -->
+        <!-- Sayfa Sol Bitis -->
         
         <?php get_sidebar(); ?>
         </div>
          
         </div>
     </div>
-    <!-- Sayfa Bitiş -->
+    <!-- Sayfa Bitis -->
 
 <?php get_footer(); ?>

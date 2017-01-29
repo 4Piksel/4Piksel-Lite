@@ -25,15 +25,15 @@
 </head>
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
        
-    <!-- Üst Alan -->
+    <!-- Ust Alan -->
     <header id="ust" itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
         <div class="ortala">
             
             <div class="logo <?php if( get_theme_mod( 'site_logo' )): echo 'bpx'; endif; ?>">
                 <?php if( get_theme_mod( 'site_logo' )): ?>
-                <a href="<?php bloginfo('url'); ?>"><img src="<?php echo get_theme_mod('site_logo'); ?>" alt="<?php bloginfo('name'); ?>"></a>
+                <a href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo get_theme_mod('site_logo'); ?>" alt="<?php bloginfo('name'); ?>"></a>
                 <?php else: ?>
-                <h1 itemprop="headline"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+                <h1 itemprop="headline"><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>
                 <?php endif; ?>
             </div>                   
                         
@@ -52,4 +52,4 @@
 
         </div>
     </header>
-    <!-- Üst Alan Bitiş -->
+    <!-- Ust Alan Bitis -->

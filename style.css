@@ -4,8 +4,10 @@
 	Author: 4Piksel
 	Author URI: http://www.4piksel.net
 	Description: 4Piksel Lite, 4Piksel'in Blog Temasından Oluşturulmuştur. SEO destekli bir temadır.
-	Version: 1.0
+	Version: 1.1
 	Text Domain: 4Piksel
+    License URI: https://github.com/4Piksel/4Piksel-Lite/blob/master/LICENSE
+    Tags: blog, two-columns, right-sidebar, custom-logo
 */
 
 @import url(css/normalize.css);
@@ -60,35 +62,6 @@ input,textarea {
     margin: 20px auto;
 }
 
-#sayfa.blog .sayfa-sol .post h1 {
-	font-size: 30px;
-	margin: 5px 0;
-}
-
-#sayfa.blog .sayfa-sol .post h2 {
-	font-size: 25px;
-	margin: 5px 0;
-}
-
-#sayfa.blog .sayfa-sol .post h3 {
-	font-size: 23px;
-	margin: 5px 0;
-}
-
-#sayfa.blog .sayfa-sol .post h4 {
-	font-size: 20px;
-	margin: 5px 0;
-}
-
-#sayfa.blog .sayfa-sol .post h5 {
-	font-size: 18px;
-	margin: 5px 0;
-}
-
-#sayfa.blog .sayfa-sol .post h6 {
-	font-size: 16px;
-	margin: 5px 0;
-}
 /********** BUTON ***********/
 
 .buton {
@@ -132,6 +105,36 @@ input,textarea {
 .buton:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1); 
+}
+
+#sayfa.blog .sayfa-sol .post h1 {
+	font-size: 30px;
+	margin: 5px 0;
+}
+
+#sayfa.blog .sayfa-sol .post h2 {
+	font-size: 25px;
+	margin: 5px 0;
+}
+
+#sayfa.blog .sayfa-sol .post h3 {
+	font-size: 23px;
+	margin: 5px 0;
+}
+
+#sayfa.blog .sayfa-sol .post h4 {
+	font-size: 20px;
+	margin: 5px 0;
+}
+
+#sayfa.blog .sayfa-sol .post h5 {
+	font-size: 18px;
+	margin: 5px 0;
+}
+
+#sayfa.blog .sayfa-sol .post h6 {
+	font-size: 16px;
+	margin: 5px 0;
 }
 
 /********** ÜST ÇUBUK ***********/
@@ -998,6 +1001,19 @@ input,textarea {
 #sayfa .sayfa-sag .widget .widget-baslik {
     color: #666;
     margin-bottom: 10px;
+    font-size: 18px;
+    font-family: 'AN Demi';
+    display: block;
+    position: relative;
+}
+
+#sayfa .sayfa-sag .widget .widget-baslik:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 3px;
+    background: #8224e3;
+    left: -10px;
 }
 
 #sayfa .sayfa-sag .widget .yazilim {
@@ -1090,79 +1106,53 @@ input,textarea {
     display: block;
 }
 
-#sayfa .sayfa-sag .satinalbuton {
-    margin-bottom: 10px;
+#sayfa .sayfa-sag .widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-#sayfa .sayfa-sag .satinalbuton a {
+#sayfa .sayfa-sag .widget ul li {
     display: block;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background: #F7733C;
-    border-radius: 2px;
-    color: #fff;
-    overflow: hidden;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);    
 }
 
-#sayfa .sayfa-sag .satinalbuton a:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #E46835;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0 50%;
-    transform-origin: 0 50%;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;    
+#sayfa .sayfa-sag .widget ul li.recentcomments {
+    padding: 5px 0;
 }
 
-#sayfa .sayfa-sag .satinalbuton a:hover:before {
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66)
+#sayfa .sayfa-sag .widget ul li a {
+    display: inline-block;
+    padding: 5px 0;
+    color: #666;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
 }
 
-#sayfa .sayfa-sag .satinalbuton a span {
-    float: right;
-    padding: 0 15px;
-    border-left: 1px solid #D75E2B;
-    font-family: 'AN Demi';
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;      
+#sayfa .sayfa-sag .widget ul li a:hover {
+    color: #000;
 }
 
-#sayfa .sayfa-sag .satinalbuton a span .fa {
-    margin-left: 5px;
+#sayfa .sayfa-sag .widget .alt .tagcloud a {
+    padding: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: 14px !important;
+    color: #666;
+    border: 1px solid #f2f2f2;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;  
+    float: left;
+    margin-right: 5px;
 }
 
-#sayfa .sayfa-sag .satinalbuton a:hover span {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);    
+#sayfa .sayfa-sag .widget .alt .tagcloud a:hover {
+    border-color: #ddd;
 }
 
 #sayfa .sayfa-sag .widget.pd0 {
@@ -1399,6 +1389,13 @@ input,textarea {
     line-height: 21px;
 }
 
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .yazi-ozet blockquote {
+    background: #f2f2f2;
+    margin: 0;
+    padding: 30px;
+    border-left: 2px solid #ddd;    
+}
+
 #sayfa.blog .sayfa-sol .post .yazi-aciklama .buton {
     float: right;
 }
@@ -1409,13 +1406,47 @@ input,textarea {
     padding-left: 5px;
 }
 
-#sayfa.blog .sayfa-sag .arama {
-    background: #fff;
-    overflow: hidden;
-    margin-bottom: 10px;
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .sayfalama {
+    margin: 10px 0;
 }
 
-#sayfa.blog .sayfa-sag .arama input {
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .sayfalama span {
+    background: #f1f1f1;
+    padding: 5px 8px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-family: 'AN Demi';
+    margin-right: 5px;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    cursor: not-allowed;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .sayfalama a {
+    color: #666;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama .sayfalama a span:hover {
+    background: #4990E2;
+    color: #fff;
+    cursor: pointer;
+}
+
+#sayfa.blog .sayfa-sol .post .yazi-aciklama img {
+    max-width: 100%;
+    height: auto;
+}
+
+#sayfa.blog .sayfa-sag .widget .search {
+    background: #fff;
+    overflow: hidden;
+}
+
+#sayfa.blog .sayfa-sag .widget .search input {
     background: 0;
     border: 0;
     width: 90%;
@@ -1425,7 +1456,7 @@ input,textarea {
     float: left;
 }
 
-#sayfa.blog .sayfa-sag .arama button {
+#sayfa.blog .sayfa-sag .widget .search button {
     width: 10%;
     float: right;
     height: 45px;
@@ -1494,6 +1525,36 @@ input,textarea {
 
 #sayfa.blog .sayfa-ust .yazi-bilgiler span a {
     color: #666;
+}
+
+#sayfa.blog .yazi-reklam {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#sayfa.blog .etiketler {
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+#sayfa.blog .etiketler span {
+    font-family: 'AN Demi';
+    float: left;
+    margin-right: 10px;
+    line-height: 22px;
+}
+
+#sayfa.blog .etiketler a {
+    color: #fff;
+    background: #000;
+    padding: 3px 5px;
+    border-radius: 2px;
+    float: left;
+    margin-right: 5px;
 }
 
 #sayfa.blog .onsonyazi {
@@ -1598,14 +1659,21 @@ input,textarea {
     width: 100%;
     resize: none;
     border: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+#sayfa.blog .yorumform input:first-child {
+    border-left: 0 !important;
 }
 
 #sayfa.blog .yorumform input {
-    width: 49.5%;
+    width: 33.333%;
     float: left;
     height: 40px;
-    border: 1px solid #eee;
+    border-left: 3px solid #eee !important;
+    border: 0;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 #sayfa.blog .yorumform input.sag {
@@ -1613,33 +1681,51 @@ input,textarea {
 }
 
 #sayfa.blog .yorumform .buton {
-    margin-top: 10px;
     border: 0;
+    width: 100%;
     cursor: pointer;
+    transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+#sayfa.blog .yorumform .buton:hover {
+    background: #4A90E2;
+}
+
+#sayfa.blog .yorumform .bilgi a {
+    color: #666;
+    font-family: 'AN Demi';
+}
+
+#sayfa.blog .yorumform .form-submit {
+    clear: both;
+    overflow: hidden;
+    margin: 0px;    
 }
 
 /********** SAYFALAMA *********/
 
-ul.sayfalama {
+.pagination {
     margin: 0;
     padding: 0;
     list-style: none;
     text-align: center;
 }
 
-ul.sayfalama li {
+.pagination .page-numbers {
     display: inline-block;
     margin-right: 10px;
-}
-
-ul.sayfalama li a {
-    width: 25px;
+    min-width: 5px;
     height: 25px;
     line-height: 25px;
-    font-size: 18px;
+    font-size: 14px;
     text-align: center;
     color: #666;
     background: #fff;
+    padding: 0 10px;
 }
 
 /********** ALT **********/
@@ -2354,6 +2440,10 @@ ul.sayfalama li a {
     }
 }
 
+.infinite-wrap {
+    margin-bottom: 10px;
+}
+
 /* Wordpress CSS'leri */
 
 -------------------------------------------------------------- */
@@ -2462,3 +2552,9 @@ a img.aligncenter {
 	width: auto;
 	z-index: 100000; /* Above WP toolbar. */
 }
+
+.sticky {}
+
+.gallery-caption {}
+
+.bypostauthor {}

@@ -12,8 +12,8 @@ function dpx_panel( $wp_customize ){
 			'priority' 			=> 10,
 			'capability' 		=> 'edit_theme_options',
 			'theme_supports'	=> '',
-			'title' 			=> __( '4Piksel Genel Ayarlar', '4piksel' ),
-			'description' 		=> __( 'Buradan temanızın genel ayarlarını yapabilirsiniz.', '4Piksel' ),
+			'title' 			=> __( '4Piksel General Settings', '4Piksel' ),
+			'description' 		=> __( 'Here you can make general settings of your theme.', '4Piksel' ),
 		)
 	);
 
@@ -23,8 +23,8 @@ function dpx_panel( $wp_customize ){
 			'priority' 			=> 11,
 			'capability' 		=> 'edit_theme_options',
 			'theme_supports'	=> '',
-			'title' 			=> __( '4Piksel Renk Ayarları', '4Piksel' ),
-			'description' 		=> __( 'Buradan temanızın renk ayarlarını yapabilirsiniz.', '4Piksel' ),
+			'title' 			=> __( '4Piksel Color Settings', '4Piksel' ),
+			'description' 		=> __( 'Here you can adjust the color settings of your theme.', '4Piksel' ),
 		)
 	);
 
@@ -34,8 +34,8 @@ function dpx_panel( $wp_customize ){
 			'priority' 			=> 12,
 			'capability' 		=> 'edit_theme_options',
 			'theme_supports'	=> '',
-			'title' 			=> __( '4Piksel Gelişmiş Ayarlar', 'theme-slug' ),
-			'description' 		=> __( 'Buradan temanızın gelişmiş ayarlarını yapabilirsiniz.', '4Piksel' ),
+			'title' 			=> __( '4Piksel Advanced Settings', '4Piksel' ),
+			'description' 		=> __( 'Here you can make advanced settings of your theme.', '4Piksel' ),
 		)
 	);
 }
