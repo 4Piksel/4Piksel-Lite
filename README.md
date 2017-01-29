@@ -10,14 +10,28 @@ Temanın kullanım amacı kişisel siteler içindir, fakat kendi isteklerinize g
 
 Temayı sürekli güncel tutmaya çalışacağız. Sizde temanın geliştirilmesine katkıda bulunmak istiyorsanız lütfen öneride bulunun.
 
-1.1 Sürümü ile gelecekler
+# 1.1 ile gelen yenilikler
 
-- Reklam Alanları
-- Bileşen Desteği
+> Temaya dil dosyaları eklendi. ( Türkçe ve İngilizce )
 
-`1.1 sürümü ile tema büyük ölçüde kod değişikliğine uğrayacaktır. 
-Kendi temanızı düzenlediyseniz bu temaya güncelleme yapmayın, bütün değişiklikleriniz gider.`
+> Sidebar eklendi.
 
+> Reklam alanları eklendi. ( Yazı altı reklam ve yazı içi reklam eklemesi yapıldı )
+
+> Yorum kodları tamamen değişti.
+
+> Temadan sayfalama kaldırıldı onun yerine Wordpress'in kendi sayfalama fonksiyonu eklendi.
+
+1.2 sürümü için lütfen önerilerde bulunmayı unutmayın.
+
+# Temaya farklı dil ekleme
+
+Örnek olarak tema klasörü > dil klasörünün içinde tr_TR.po ve tr_TR.mo dosyalarını kopyalayıp yapıştırın ve adını fr_FR.po ve fr_FR.mo olarak kaydedin. Bu sayede temaya çoklu dil özelliği kazandırmış olursunuz. Oluşturduğunuz dil dosyasını düzenlemek için PoEdit'i indirip gerekli düzenlemeleri yapabilirsiniz.
+
+Görsel:
+
+![](http://i.hizliresim.com/3vk2ZA.png)
+ 
 4Piksel Wordpress Ekibi
 
 http://www.4piksel.net
