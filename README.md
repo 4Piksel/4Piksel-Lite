@@ -10,6 +10,16 @@ Temanın kullanım amacı kişisel siteler içindir, fakat kendi isteklerinize g
 
 Temayı sürekli güncel tutmaya çalışacağız. Sizde temanın geliştirilmesine katkıda bulunmak istiyorsanız lütfen öneride bulunun.
 
+# 1.2 ile gelen yenilikler
+
+> Tasarımda büyük ölçüde değişiklik yapıldı.
+
+> Sidebar'da düzenlemeler yapıldı.
+
+> Yorum alanında geliştirmeler yapıldı.
+
+> AJAX ile ilgili ayrıntılar eklendi.
+
 # 1.1 ile gelen yenilikler
 
 > Temaya dil dosyaları eklendi. ( Türkçe ve İngilizce )
