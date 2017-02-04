@@ -15,11 +15,7 @@
 	
     <style>
         <?php if(get_theme_mod('baslik_renk')): ?>
-        #sayfa.blog .sayfa-sol .post .yazi-aciklama h1 a,
-        #sayfa .sayfa-baslik,
-        #sayfa .sayfa-sag .widget.pd0 .widget-baslik {
-            color: <?php echo get_theme_mod('baslik_renk'); ?> !important;
-        }
+
         <?php endif; ?>
     </style>	
 </head>
@@ -35,6 +31,10 @@
                 <?php else: ?>
                 <h1 itemprop="headline"><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>
                 <?php endif; ?>
+            </div>
+            
+            <div class="aciklama">
+                <?php if(is_single()): the_title(); else: bloginfo('description'); endif; ?>
             </div>                   
                         
             <?php if(has_nav_menu('ustmenu') ): ?>
@@ -52,4 +52,20 @@
 
         </div>
     </header>
+    
+    <?php if(has_nav_menu('ortamenu')): ?>
+    <nav id="menu">
+        <div class="ortala">
+            <?php wp_nav_menu( array(
+                'theme_location'  => 'ortamenu',
+                'container'       => '',
+                'container_class' => '',
+                'container_id'    => '',
+                'menu_class'      => 'menu',
+                'menu_id'         => '',
+                'depth'           => 0,
+            ) ); ?>
+        </div>
+    </nav>
+    <?php endif; ?>
     <!-- Ust Alan Bitis -->

@@ -1,6 +1,17 @@
     <!-- Alt Alan -->
     <footer id="alt" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
         <div class="ortala">
+               
+            <?php wp_nav_menu( array(
+                'theme_location'  => 'altmenu',
+                'container'       => '',
+                'container_class' => '',
+                'container_id'    => '',
+                'menu_class'      => 'menu',
+                'menu_id'         => '',
+                'depth'           => 0,
+            ) ); ?>               
+           
             <div class="kolonlar">
                 
                 <div class="kolon dort">
@@ -51,6 +62,26 @@
         ga('create', '<?php echo get_theme_mod('analytics'); ?>', 'auto');
         ga('send', 'pageview');
     <?php endif; ?>
+    
+    $(document).ready(function() {
+        $('.sayfa-sag').stickit({
+            screenMinWidth: 980,
+            <?php if(is_user_logged_in()): ?>
+            top: 100
+            <?php else: ?>
+            top: 70
+            <?php endif; ?>
+        });   
+
+        $('#ust').stickit({
+           screenMinWidth: 980,
+            <?php if(is_user_logged_in()): ?>    
+            top: 32
+            <?php else: ?>
+            top: 0;
+            <?php endif; ?>
+        });           
+    });
 
 </script>    
 </body>

@@ -7,11 +7,16 @@ $(document).ready(function() {
     $menuac.click(function() {
         $(this).toggleClass('acik');
         $('#ust ul.menu').slideToggle();
-    });     
+    });   
+    
+        $('.sayfa-sag').stickit({
+            screenMinWidth: 980,
+            top: 70
+        });   
 
-    $('.sayfa-sag').stickit({
-        screenMinWidth: 980,
-        top: 20
-    });       
+        $('#ust').stickit({
+           screenMinWidth: 980,
+            top: 0
+        });     
     
 });

@@ -29,6 +29,8 @@ if ( ! function_exists( 'dpx_kurulum' )) {
         add_editor_style();
 		register_nav_menus( array (
 			'ustmenu'      => __('Header Menu', '4Piksel'),
+			'ortamenu'     => __('Middle Menu', '4Piksel'),
+			'altmenu'      => __('Footer Menu', '4Piksel'),
 		) );
         remove_filter( 'the_excerpt', 'wpautop' ); 
         if ( ! isset( $content_width ) ) $content_width = 1000;
@@ -46,7 +48,7 @@ function dpx_bilesen() {
         'description' => __( 'The components you add to the sidebar area appear only in the right hand area.', '4Piksel' ),
         'before_widget' => '<aside class="widget">', 
         'after_widget' => '</aside>',
-        'before_title' => '<span class="widget-baslik">',
+        'before_title' => '<span lang="tr" class="widget-baslik">',
         'after_title' => '</span><div class="alt">',)
     );
     
@@ -210,8 +212,6 @@ function tema_dil(){
     load_theme_textdomain( '4Piksel', get_template_directory() . '/dil' );
 }
 
-define('WPLANG', 'tr-TR');
-
 function cevap_js() {
 
     if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
@@ -250,5 +250,6 @@ function reklam_paragraf( $insertion, $paragraph_id, $content ) {
 	
 	return implode( '', $paragraphs );
 }
+
 
 ?>

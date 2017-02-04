@@ -48,7 +48,7 @@ if ( post_password_required() ) {
         'label_submit'      => __( 'Post Comment', '4Piksel' ),
         'format'            => 'xhtml',
 
-        'comment_field' =>  '<textarea class="yazi-ic" id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="'.sprintf(__('Message', '4Piksel')).'">' .
+        'comment_field' =>  '<textarea class="yazi-ic" id="comment" name="comment" cols="45" rows="8"placeholder="'.sprintf(__('Message', '4Piksel')).'" required>' .
         '</textarea>',
 
         'must_log_in' => '<p class="bilgi">' .
@@ -71,14 +71,14 @@ if ( post_password_required() ) {
 
         'fields' => apply_filters(
             'comment_form_default_fields', array(
-                'author' =>'<input id="author" placeholder="'.sprintf(__('Full Name (Required)', '4Piksel')).'" name="author" type="text" value="' .
-                    esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />'
+                'author' =>'<div class="inputlar"><input id="author" placeholder="'.sprintf(__('Full Name (Required)', '4Piksel')).'" name="author" type="text" value="' .
+                    esc_attr( $commenter['comment_author'] ) . '" size="30" required />'
                     ,
                 'email'  => '<input id="email" placeholder="'.sprintf(__("E-Mail (Required)", "4Piksel")).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-                    '" size="30"' . $aria_req . ' />'  .
+                    '" size="30" required />'  .
                     ( $req ? '' : '' ) 
                      ,
-                'url'    => '<input id="url" name="url" placeholder="'.sprintf(__("Website", "4Piksel")).'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />'
+                'url'    => '<input id="url" name="url" placeholder="'.sprintf(__("Website", "4Piksel")).'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div>'
             )
         ),          
         

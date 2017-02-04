@@ -3,55 +3,13 @@
     <!-- Sayfa -->
     <div id="sayfa" class="blog" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
         <div class="ortala">
-        <?php if(have_posts()): the_post(); ?>
-        <div class="sayfa-ust">
-            <h1 class="sayfa-baslik" itemprop="headline"><?php the_title(); ?></h1>
-                <div class="yazi-bilgiler">
-                    <span><time datetime="<?php the_time('d.m.Y'); ?>" itemprop="datePublished"><i class="fa fa-calendar"></i><?php the_time('d.m.Y'); ?></time></span>
-                    <span itemscope="itemscope" itemtype="http://schema.org/Person" itemprop="author"><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php adsoyad(); ?></a></span>
-                    <span><i class="fa fa-folder"></i><?php katlink(); ?></span>
-                    <span><i class="fa fa-comments"></i><?php comments_number( 'Yorum Yok', '1 Yorum', '% Yorum' ); ?></span>
-                </div>
-        </div>  
-        
         <div class="sayfasabit">
         <!-- Sayfa Sol -->
         <div class="sayfa-sol">
             
             <!-- Yazi -->
-            <article class="post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-                <div class="yazi-resim" itemprop="image">
-                    <?php if ( has_post_thumbnail() ) {
-                        the_post_thumbnail('large');
-                    } else {
-                        echo '<img src="' . get_template_directory_uri() . '/rsm/resimyok.png" />';
-                    } ?>
-                </div>
-                <div class="yazi-aciklama">
-                    <div class="yazi-ozet" itemprop="text">
-                        <?php the_content(); 
-                        
-                        $varsayilan = array(
-                                'before'           => '<div class="sayfalama">',
-                                'after'            => '</div>',
-                                'link_before'      => '<span>',
-                                'link_after'       => '</span>',
-                                'next_or_number'   => 'number',
-                                'separator'        => ' ',
-                                'nextpagelink'     => __( 'Next page', '4Piksel' ),
-                                'previouspagelink' => __( 'Previous page', '4Piksel' ),
-                                'pagelink'         => '%',
-                                'echo'             => 1
-                            );
-
-                                wp_link_pages( $varsayilan );
-
-                        ?>                         
-                    </div>
-                </div>
-            </article>
+            <?php if(have_posts()): the_post(); get_template_part('content'); endif; ?>
             <!-- Yazi Bitisi -->
-            <?php endif; ?>
             
             <?php if(get_theme_mod('yazi-reklam')): ?>
             <div class="yazi-reklam">

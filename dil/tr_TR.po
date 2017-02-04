@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2017-01-29 17:31-0800\n"
-"PO-Revision-Date: 2017-01-29 17:32-0800\n"
+"POT-Creation-Date: 2017-02-02 13:10-0800\n"
+"PO-Revision-Date: 2017-02-02 13:10-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: tr_TR\n"
@@ -15,19 +15,15 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;__;esc_attr__\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: archive.php:43 index.php:39
-msgid "Read More"
-msgstr "Devamını Oku"
-
-#: archive.php:52 index.php:48 single.php:42
+#: archive.php:18 index.php:18
 msgid "Previous page"
 msgstr "Önceki sayfa"
 
-#: archive.php:53 index.php:49 single.php:41
+#: archive.php:19 index.php:19
 msgid "Next page"
 msgstr "Sonraki sayfa"
 
-#: archive.php:54 index.php:50
+#: archive.php:20 index.php:20
 msgid "Page"
 msgstr "Sayfa"
 
@@ -81,6 +77,22 @@ msgstr "E-Posta (Gerekli)"
 #: comments.php:81
 msgid "Website"
 msgstr "Website Adresi"
+
+#: content.php:22
+msgid "No Comments"
+msgstr "Yorum Yok"
+
+#: content.php:22
+msgid "1 Comment"
+msgstr "1 Yorum"
+
+#: content.php:22
+msgid "% Comment"
+msgstr "% Yorum"
+
+#: content.php:28
+msgid "Read More"
+msgstr "Devamını Oku"
 
 #: fonksiyon/customizer/alan-ekle.php:12
 msgid "Header Settings"
@@ -170,7 +182,7 @@ msgstr "Telif hakkı yazısı"
 msgid "You can write your copyright statement here."
 msgstr "Buraya telif hakkı yazısını yazabilirsiniz."
 
-#: fonksiyon/customizer/kontroller.php:37 functions.php:177
+#: fonksiyon/customizer/kontroller.php:37 functions.php:179
 msgid "Facebook"
 msgstr "Facebook"
 
@@ -178,7 +190,7 @@ msgstr "Facebook"
 msgid "You can write your Facebook profile link here."
 msgstr "Buraya Facebook profil bağlantısını yazabilirsiniz."
 
-#: fonksiyon/customizer/kontroller.php:48 functions.php:178
+#: fonksiyon/customizer/kontroller.php:48 functions.php:180
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -210,7 +222,7 @@ msgstr "Linkedin"
 msgid "You can write your Linkedin profile link here."
 msgstr "Buraya Linkedin profil bağlantısını yazabilirsiniz."
 
-#: fonksiyon/customizer/kontroller.php:92 functions.php:180
+#: fonksiyon/customizer/kontroller.php:92 functions.php:182
 msgid "Instagram"
 msgstr "Instagram"
 
@@ -307,54 +319,50 @@ msgstr "Yeni Yorumlar"
 msgid "Header Menu"
 msgstr "Üst Menü"
 
-#: functions.php:44
+#: functions.php:32
+msgid "Middle Menu"
+msgstr "Orta Menü"
+
+#: functions.php:33
+msgid "Footer Menu"
+msgstr "Alt Menü"
+
+#: functions.php:46
 msgid "Sidebar"
 msgstr "Kenar Çubuğu"
 
-#: functions.php:46
+#: functions.php:48
 msgid ""
 "The components you add to the sidebar area appear only in the right hand "
 "area."
 msgstr "Kenar çubuğuna eklediğiniz bileşenler yalnızca sağ alanda görünür."
 
-#: functions.php:58
+#: functions.php:60
 msgid "Search..."
 msgstr "Arama Yap..."
 
-#: functions.php:123
+#: functions.php:125
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:125
 msgid "(Edit)"
 msgstr "(Düzenle)"
 
-#: functions.php:137
+#: functions.php:139
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:144
 msgid "<p>(Your comment is waiting for administrator approval.)</p>"
 msgstr "<p>(Yorumunuz yönetici onayı beklemektedir.)</p>"
 
-#: functions.php:179
+#: functions.php:181
 msgid "Google Plus"
 msgstr ""
 
-#: index.php:34
-msgid "No Comments"
-msgstr "Yorum Yok"
-
-#: index.php:34
-msgid "1 Comment"
-msgstr "1 Yorum"
-
-#: index.php:34
-msgid "% Comment"
-msgstr "% Yorum"
-
-#: single.php:65
+#: single.php:23
 msgid "Tags:"
 msgstr "Etiketler:"
 
